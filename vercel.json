@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "/details/(.*)",
+      "status": 410,
+      "headers": {
+        "Content-Type": "text/html"
+      },
+      "dest": "/410.html"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    }
+  ]
+}
