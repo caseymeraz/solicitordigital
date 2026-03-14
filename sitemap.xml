@@ -6,4 +6,40 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://solicitordigital.ie/seo-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://solicitordigital.ie/website-design-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://solicitordigital.ie/digital-marketing-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://solicitordigital.ie/ppc-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://solicitordigital.ie/local-seo-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://solicitordigital.ie/content-marketing-for-solicitors</loc>
+        <lastmod>2026-03-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>

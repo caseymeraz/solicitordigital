@@ -93,6 +93,22 @@
         .nav-cta { padding: 10px 22px; font-size: 0.85rem; }
         .mobile-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
 
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown-menu {
+            display: none; position: absolute; top: 100%; left: -12px;
+            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 8px 0; min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3); margin-top: 12px; z-index: 100;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a {
+            display: block; padding: 10px 20px; color: var(--gray-300);
+            font-size: 0.85rem; white-space: nowrap;
+        }
+        .nav-dropdown-menu a:hover { background: rgba(0,166,126,0.1); color: var(--green); }
+
         /* Hero */
         .hero {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
@@ -259,6 +275,7 @@
             .trust-bar { gap: 32px; }
             nav { display: none; }
             nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+            nav.open .nav-dropdown-menu { display: block; position: static; background: none; border: none; box-shadow: none; padding: 0 0 0 12px; margin: 0; min-width: 0; }
             .mobile-toggle { display: block; }
             .header-inner { padding: 12px 24px; }
             .pricing-table { font-size: 0.9rem; }
@@ -479,11 +496,20 @@
     <!-- Header -->
     <header class="site-header" id="header">
         <div class="header-inner">
-            <a href="#" class="logo">Solicitor<span>Digital</span>.ie</a>
+            <a href="/" class="logo">Solicitor<span>Digital</span>.ie</a>
             <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
             <nav>
-                <a href="#services">Services</a>
-                <a href="#practice-areas">Practice Areas</a>
+                <div class="nav-dropdown">
+                    <a href="/digital-marketing-for-solicitors">Services &#9662;</a>
+                    <div class="nav-dropdown-menu">
+                        <a href="/seo-for-solicitors">SEO for Solicitors</a>
+                        <a href="/website-design-for-solicitors">Website Design</a>
+                        <a href="/digital-marketing-for-solicitors">Digital Marketing</a>
+                        <a href="/ppc-for-solicitors">PPC / Google Ads</a>
+                        <a href="/local-seo-for-solicitors">Local SEO</a>
+                        <a href="/content-marketing-for-solicitors">Content Marketing</a>
+                    </div>
+                </div>
                 <a href="#process">Process</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
@@ -1256,9 +1282,12 @@
                     <p>&copy; 2025 SolicitorDigital.ie is a trading name of Ethical Digital Marketing Limited. Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#top">Back to Top</a>
+                    <a href="/seo-for-solicitors">SEO</a>
+                    <a href="/website-design-for-solicitors">Web Design</a>
+                    <a href="/ppc-for-solicitors">PPC</a>
+                    <a href="/local-seo-for-solicitors">Local SEO</a>
                     <a href="#contact">Contact</a>
-                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#privacy">Privacy</a>
                 </div>
             </div>
         </div>

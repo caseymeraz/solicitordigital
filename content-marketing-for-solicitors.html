@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Marketing for Solicitors Ireland | Legal Content Strategy | SolicitorDigital.ie</title>
+    <meta name="description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
+    <meta name="keywords" content="content marketing for solicitors, content marketing for legal firms, content marketing agency for lawyers, law firm content marketing, legal content marketing">
+    <link rel="canonical" href="https://solicitordigital.ie/content-marketing-for-solicitors">
+    <link rel="alternate" hreflang="en-IE" href="https://solicitordigital.ie/content-marketing-for-solicitors">
+    <meta property="og:title" content="Content Marketing for Solicitors Ireland | SolicitorDigital.ie">
+    <meta property="og:description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
+    <meta property="og:url" content="https://solicitordigital.ie/content-marketing-for-solicitors">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Content Marketing for Solicitors Ireland | SolicitorDigital.ie">
+    <meta name="twitter:description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --navy: #0a1628;
+            --navy-light: #132038;
+            --navy-mid: #1a2d4a;
+            --green: #00a67e;
+            --green-dark: #008f6b;
+            --green-light: #00c896;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ea;
+            --gray-300: #c8cfd8;
+            --gray-600: #5a6578;
+            --gray-700: #3d4654;
+            --gold: #d4a843;
+            --max-width: 1140px;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-700);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3, h4 { color: var(--navy); line-height: 1.3; font-weight: 700; }
+        h1 { font-size: 2.75rem; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--green); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--green-dark); }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 6px;
+            font-weight: 600; font-size: 1rem; cursor: pointer;
+            transition: all 0.25s ease; border: none; text-align: center;
+        }
+        .btn-primary {
+            background: var(--green); color: var(--white);
+        }
+        .btn-primary:hover { background: var(--green-dark); color: var(--white); transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 2px solid var(--white);
+        }
+        .btn-outline:hover { background: var(--white); color: var(--navy); }
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--gray-50); }
+        .section-dark { background: var(--navy); color: var(--gray-200); }
+        .section-dark h2, .section-dark h3 { color: var(--white); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+        /* Header */
+        .site-header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 24px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
+        .logo span { color: var(--green); }
+        nav { display: flex; align-items: center; gap: 28px; }
+        nav a { color: var(--gray-300); font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--white); }
+        .nav-cta { padding: 10px 22px; font-size: 0.85rem; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown-menu {
+            display: none; position: absolute; top: 100%; left: -12px;
+            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 8px 0; min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3); margin-top: 12px; z-index: 100;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a {
+            display: block; padding: 10px 20px; color: var(--gray-300);
+            font-size: 0.85rem; white-space: nowrap;
+        }
+        .nav-dropdown-menu a:hover { background: rgba(0,166,126,0.1); color: var(--green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+            padding: 160px 0 100px; color: var(--white); position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 800px; height: 800px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,166,126,0.08) 0%, transparent 70%);
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 720px; }
+        .hero h1 { margin-bottom: 1.25rem; color: var(--white); }
+        .hero h1 .highlight { color: var(--green); }
+        .hero p { font-size: 1.2rem; color: var(--gray-300); margin-bottom: 2rem; max-width: 600px; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 3rem; }
+        .trust-bar { display: flex; gap: 48px; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-number { display: block; font-size: 2rem; font-weight: 700; color: var(--green); line-height: 1.2; }
+        .trust-label { font-size: 0.85rem; color: var(--gray-300); }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--white); border: 1px solid var(--gray-200);
+            border-radius: 10px; padding: 32px; transition: all 0.3s;
+        }
+        .service-card:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+        .service-card h3 { font-size: 1.15rem; }
+        .service-card p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 0; }
+
+        /* Process Steps */
+        .process-step {
+            display: flex; gap: 24px; align-items: flex-start;
+            padding: 28px 0; border-bottom: 1px solid var(--gray-200);
+        }
+        .process-step:last-child { border-bottom: none; }
+        .step-number {
+            flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+            background: var(--green); color: var(--white); display: flex;
+            align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;
+        }
+        .step-content h3 { margin-bottom: 6px; }
+        .step-content p { margin-bottom: 0; color: var(--gray-600); }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 1.05rem;
+            color: var(--navy); gap: 16px;
+        }
+        .faq-question:hover { color: var(--green); }
+        .faq-arrow { flex-shrink: 0; transition: transform 0.3s; font-size: 0.85rem; color: var(--green); }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer-inner { padding: 0 0 20px; color: var(--gray-600); line-height: 1.8; }
+
+        /* Footer */
+        .site-footer {
+            background: #060e1a; color: var(--gray-600); padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--gray-600); font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--green); }
+        .footer-company { font-size: 0.85rem; }
+
+        /* Utility */
+        .text-green { color: var(--green); }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 3rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mt-6 { margin-top: 3rem; }
+        .section-intro { max-width: 680px; margin: 0 auto 3rem; text-align: center; color: var(--gray-600); font-size: 1.1rem; }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { padding: 6px 0 6px 28px; position: relative; }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,166,126,0.08), rgba(0,166,126,0.03));
+            border-left: 4px solid var(--green); padding: 24px 28px; border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.7rem; }
+        }
+        @media (max-width: 640px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .hero { padding: 130px 0 70px; }
+            .section { padding: 60px 0; }
+            .trust-bar { gap: 32px; }
+            nav { display: none; }
+            nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+            nav.open .nav-dropdown-menu { display: block; position: static; background: none; border: none; box-shadow: none; padding: 0 0 0 12px; margin: 0; min-width: 0; }
+            .mobile-toggle { display: block; }
+            .header-inner { padding: 12px 24px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Content Marketing for Solicitors",
+        "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://solicitordigital.ie/#business"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Ireland"
+        },
+        "url": "https://solicitordigital.ie/content-marketing-for-solicitors",
+        "name": "Content Marketing for Solicitors Ireland",
+        "description": "Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search."
+    }
+    </script>
+</head>
+<body>
+
+<header class="site-header" id="header">
+    <div class="header-inner">
+        <a href="/" class="logo">Solicitor<span>Digital</span>.ie</a>
+        <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+        <nav>
+            <div class="nav-dropdown">
+                <a href="/digital-marketing-for-solicitors">Services &#9662;</a>
+                <div class="nav-dropdown-menu">
+                    <a href="/seo-for-solicitors">SEO for Solicitors</a>
+                    <a href="/website-design-for-solicitors">Website Design</a>
+                    <a href="/digital-marketing-for-solicitors">Digital Marketing</a>
+                    <a href="/ppc-for-solicitors">PPC / Google Ads</a>
+                    <a href="/local-seo-for-solicitors">Local SEO</a>
+                    <a href="/content-marketing-for-solicitors">Content Marketing</a>
+                </div>
+            </div>
+            <a href="/#process">Process</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#contact" class="btn btn-primary nav-cta">Free SEO Audit</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Content Marketing <span class="highlight">for Solicitors</span></h1>
+            <p>Your potential clients are searching Google with legal questions every day. The firms that answer those questions with clear, well-written content are the ones winning new business. We create that content for you.</p>
+            <div class="hero-buttons">
+                <a href="/#contact" class="btn btn-primary">Get a Free Content Audit</a>
+                <a href="#process" class="btn btn-outline">See Our Process</a>
+            </div>
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span class="trust-number">15+</span>
+                    <span class="trust-label">Years in Legal Marketing</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">500+</span>
+                    <span class="trust-label">Law Firm Clients</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">10k+</span>
+                    <span class="trust-label">Legal Pages Published</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">3x</span>
+                    <span class="trust-label">Avg. Traffic Growth</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Content Matters -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Content Marketing Matters for Solicitors</h2>
+        <p class="section-intro">Google wants to show searchers the most helpful, trustworthy results. For legal topics, that bar is even higher. Well-written content is how your firm clears it.</p>
+        <div class="grid-2">
+            <div>
+                <h3>E-E-A-T and Your Firm's Authority</h3>
+                <p>Google evaluates legal websites using a framework called E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. Legal services fall under what Google calls "Your Money or Your Life" (YMYL) topics, meaning the quality standard is stricter than for most industries.</p>
+                <p>What does that mean in practice? Your website needs to demonstrate that real solicitors with real qualifications are behind the advice. Thin pages with a paragraph of generic text will not rank. Google wants depth, accuracy, and evidence of genuine legal knowledge.</p>
+                <p>The firms that invest in quality content are the ones Google rewards with visibility. Every practice area page, blog post, and FAQ you publish is an opportunity to prove your firm's expertise to both Google and potential clients.</p>
+            </div>
+            <div>
+                <h3>Topical Authority Wins Rankings</h3>
+                <p>Topical authority means covering a subject area thoroughly enough that Google sees your site as the go-to resource. A single page about "family law" is not enough. You need pages covering separation, divorce, custody, maintenance, prenuptial agreements, and more.</p>
+                <p>When your site covers a practice area from every angle, Google starts ranking all of those pages higher. Each piece of content supports the others. A blog post answering "How long does a divorce take in Ireland?" reinforces the authority of your main divorce solicitor page.</p>
+                <ul class="check-list">
+                    <li>Practice area pages build your core service visibility</li>
+                    <li>Blog posts answer the questions clients search before they call</li>
+                    <li>FAQ pages capture long-tail queries your competitors miss</li>
+                    <li>Location pages connect your services to specific cities and counties</li>
+                    <li>Legal guides position your firm as a trusted resource</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Types of Content We Create -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="text-center mb-4">Content We Create for Law Firms</h2>
+        <p class="section-intro">Every piece of content we produce targets specific search terms your potential clients use. Nothing is written without a purpose. Here is what we deliver.</p>
+        <div class="grid-3">
+            <div class="service-card">
+                <span class="service-icon">&#128196;</span>
+                <h3>Practice Area Pages</h3>
+                <p>In-depth pages for each area of law your firm handles. These are your most important pages for converting visitors into clients. We write them to rank for high-intent terms like "personal injury solicitor Dublin" or "employment law solicitor Cork."</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#9997;</span>
+                <h3>Blog Posts</h3>
+                <p>Regular, original articles that answer the questions your clients are already searching. Topics like "What happens if someone contests a will in Ireland?" or "Can I claim for unfair dismissal?" These posts bring in traffic and build trust before a client ever picks up the phone.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#10067;</span>
+                <h3>FAQ Pages</h3>
+                <p>Structured FAQ content targeting long-tail search queries. These pages capture the exact phrases people type into Google and provide clear, helpful answers. They also qualify for rich snippets in search results, giving your firm more visibility on the results page.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128214;</span>
+                <h3>Legal Guides</h3>
+                <p>Longer-form guides covering topics like "A Complete Guide to Buying a House in Ireland" or "Understanding Your Rights After a Workplace Injury." These attract backlinks, establish authority, and serve as reference content that ranks for years.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128205;</span>
+                <h3>Location Pages</h3>
+                <p>Dedicated pages targeting the cities and towns your firm serves. Whether you need to rank in Dublin, Galway, Limerick, Waterford, or across multiple counties, location pages connect your services to the areas where your clients search.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128202;</span>
+                <h3>Case Study Content</h3>
+                <p>Anonymised case studies and outcome summaries (where LSRA guidelines allow) that show potential clients the types of matters your firm handles. This type of content builds confidence and demonstrates real-world experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Content Process -->
+<section class="section" id="process">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Content Marketing Process</h2>
+        <p class="section-intro">Backed by the expertise of Juris Digital, our process is built specifically for solicitor firms. Every step is designed to produce content that ranks, converts, and complies with Irish regulations.</p>
+        <div style="max-width: 740px; margin: 0 auto;">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Research and Keyword Mapping</h3>
+                    <p>We start by identifying what your potential clients actually search for. Using keyword research tools and competitor analysis, we map out every topic your firm should cover. Each keyword is matched to a specific page type, whether that is a practice area page, blog post, or FAQ.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Writing and Legal Review</h3>
+                    <p>Our writers produce original content tailored to Irish law. We write in plain English, not legalese. Every page is structured for both search engines and real people, with proper headings, internal links, and calls to action. We then send the content to your team for legal accuracy review before publishing.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>On-Page Optimisation</h3>
+                    <p>Before publishing, every piece goes through our on-page checklist: title tags, meta descriptions, header structure, schema markup, image alt text, internal linking, and mobile formatting. These details are what separate content that ranks from content that sits on page five.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Publishing and Distribution</h3>
+                    <p>Content is published on your website and submitted for indexing. Where appropriate, we distribute it through your firm's social channels and email list. Each piece is added to your site's internal linking structure so it supports and strengthens your other pages.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Performance Tracking and Updates</h3>
+                    <p>We monitor every page's rankings, traffic, and engagement. Content that underperforms gets revised. Pages that rank well get expanded. You receive monthly reports showing exactly which pages are driving traffic and enquiries to your firm.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LSRA Compliance -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="text-center mb-4">LSRA Compliance in Legal Content</h2>
+        <p class="section-intro">Publishing content for a solicitor's website is not the same as writing for any other business. There are rules, and getting them wrong can cause real problems.</p>
+        <div style="max-width: 740px; margin: 0 auto;">
+            <div class="highlight-box">
+                <h3>Why This Matters</h3>
+                <p>The Legal Services Regulatory Authority (LSRA) sets advertising and marketing guidelines that all solicitors in Ireland must follow. This includes the content published on your website. Claims about results, client testimonials, comparisons with other firms, and certain language around legal outcomes all need to meet LSRA standards.</p>
+                <p>Many generic content agencies are not aware of these rules. They produce content that could put your firm at risk. We build LSRA compliance into every stage of our writing process. Our team knows what can and cannot be said on a solicitor's website, and we work with your firm to ensure every page meets both regulatory requirements and your own professional standards.</p>
+                <p style="margin-bottom: 0;">This is one of the key reasons solicitors choose a specialist legal marketing agency over a generalist. The cost of getting it wrong is too high.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" id="faq">
+    <div class="container">
+        <h2 class="text-center mb-6">Content Marketing FAQs for Solicitors</h2>
+        <div style="max-width: 760px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How often should a solicitor's website publish new content?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        For most firms, two to four new pieces of content per month is a good starting point. This could be a mix of blog posts, FAQ updates, and new practice area pages. Consistency matters more than volume. Publishing one well-researched article per week will outperform publishing ten rushed pieces in a single month. We tailor the content calendar to your firm's capacity and goals.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you write the content or do our solicitors need to?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        We handle the writing. Our team researches and drafts every piece, then sends it to your firm for review. Your solicitors check the content for legal accuracy and approve it before publication. This keeps your team's time commitment to a minimum while ensuring everything published under your firm's name is accurate and appropriate.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long does it take for content to start ranking on Google?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        New content typically starts appearing in search results within a few weeks of being indexed. However, reaching page one for competitive terms usually takes three to six months. Less competitive, long-tail keywords can rank faster. The key is consistency. Firms that publish regularly build topical authority faster, which lifts the rankings of all their pages over time.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the difference between content marketing and SEO?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Content marketing is one part of a broader SEO strategy. SEO also includes technical work (site speed, mobile performance, crawlability), local SEO (Google Business Profile, citations), and link building. Content marketing focuses on creating the pages that rank. Without good content, there is nothing for Google to show in search results. The two work together, and we often deliver both as part of the same engagement.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can you update our existing content or do you only write new pages?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Both. In many cases, updating and expanding existing pages delivers faster results than creating new ones from scratch. If your site already has practice area pages or blog posts, we audit them first. Pages with some existing authority can often be improved and re-optimised to rank significantly higher. We will recommend the right mix of new content and updates based on what your site needs.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is content marketing worth it for a small firm outside Dublin?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Absolutely. In fact, smaller firms outside Dublin often see results faster because there is less competition in local search. A solicitor in Galway, Limerick, or Waterford can dominate local search results with a well-planned content strategy, often outranking larger firms that have not invested in content. Location-specific pages and locally relevant blog posts are particularly effective for firms serving regional markets.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section-dark text-center">
+    <div class="container">
+        <h2>Ready to Build Your Firm's Online Authority?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--gray-300); font-size: 1.15rem;">Request a free content audit for your law firm. We will review your existing content, identify gaps, and show you exactly where the opportunities are to attract more clients through search.</p>
+        <a href="/#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Get Your Free Content Audit</a>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-company">
+                <p>&copy; 2025 SolicitorDigital.ie is a trading name of Ethical Digital Marketing Limited. Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/seo-for-solicitors">SEO</a>
+                <a href="/website-design-for-solicitors">Web Design</a>
+                <a href="/ppc-for-solicitors">PPC</a>
+                <a href="/local-seo-for-solicitors">Local SEO</a>
+                <a href="/#contact">Contact</a>
+                <a href="/#privacy">Privacy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+            document.querySelector('nav').classList.remove('open');
+        });
+    });
+</script>
+
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:var(--navy); border-top:1px solid rgba(255,255,255,0.1); padding:16px 24px;">
+    <div style="max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <p style="color:var(--gray-300); margin:0; font-size:0.9rem; flex:1; min-width:250px;">This site uses cookies to remember your preferences. See our <a href="/#privacy" style="text-decoration:underline;">Privacy Policy</a> for details.</p>
+        <div style="display:flex; gap:10px;">
+            <button onclick="acceptCookies()" style="padding:10px 24px; background:var(--green); color:var(--white); border:none; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Accept</button>
+            <button onclick="declineCookies()" style="padding:10px 24px; background:transparent; color:var(--gray-300); border:1px solid var(--gray-600); border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Decline</button>
+        </div>
+    </div>
+</div>
+<script>
+    (function() {
+        if (!localStorage.getItem('cookie_consent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    })();
+    function acceptCookies() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function declineCookies() {
+        localStorage.setItem('cookie_consent', 'declined');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
