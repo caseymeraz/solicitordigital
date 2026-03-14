@@ -276,12 +276,14 @@
                 "alternateName": "Solicitor Digital",
                 "description": "Expert SEO services for solicitors and law firms in Ireland. Operated by Ethical Digital Marketing Limited.",
                 "url": "https://solicitordigital.ie",
-                "telephone": "+353-28-51000",
+                "telephone": "+353-21-206-3107",
                 "email": "hello@solicitordigital.ie",
                 "address": {
                     "@type": "PostalAddress",
+                    "streetAddress": "Unit 2 Pier Rd, Dromderrig",
                     "addressLocality": "Kinsale",
                     "addressRegion": "Co. Cork",
+                    "postalCode": "P17 V124",
                     "addressCountry": "IE"
                 },
                 "geo": {
@@ -303,8 +305,10 @@
                     "name": "Ethical Digital Marketing Limited",
                     "address": {
                         "@type": "PostalAddress",
+                        "streetAddress": "Unit 2 Pier Rd, Dromderrig",
                         "addressLocality": "Kinsale",
                         "addressRegion": "Co. Cork",
+                        "postalCode": "P17 V124",
                         "addressCountry": "IE"
                     }
                 },
@@ -1147,6 +1151,12 @@
                                 <textarea id="message" name="message" placeholder="What are you hoping to achieve with SEO? Any specific challenges or goals?"></textarea>
                             </div>
                         </div>
+                        <div class="form-group full-width" style="margin-top:8px;">
+                            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:0.9rem; color:var(--gray-300);">
+                                <input type="checkbox" id="consent" name="consent" required style="margin-top:4px; min-width:18px; min-height:18px; accent-color:var(--green);">
+                                <span>I consent to Ethical Digital Marketing Limited processing my data to respond to this enquiry. See our <a href="#privacy" style="text-decoration:underline;">Privacy Policy</a>.</span>
+                            </label>
+                        </div>
                         <div class="form-submit">
                             <button type="submit" class="btn btn-primary" style="width:100%; padding:16px;">Request Your Free SEO Audit</button>
                         </div>
@@ -1158,7 +1168,7 @@
                         <span class="icon">&#x1F4DE;</span>
                         <div>
                             <p><strong style="color:var(--white);">Phone</strong></p>
-                            <p><a href="tel:+35328510000">+353 28 51000</a></p>
+                            <p><a href="tel:+353212063107">(021) 206 3107</a></p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1172,7 +1182,7 @@
                         <span class="icon">&#x1F4CD;</span>
                         <div>
                             <p><strong style="color:var(--white);">Location</strong></p>
-                            <p>Kinsale, Co. Cork, Ireland</p>
+                            <p>Unit 2 Pier Rd, Dromderrig,<br>Kinsale, Co. Cork, P17 V124</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1197,16 +1207,58 @@
         </div>
     </section>
 
+    <!-- Privacy Policy -->
+    <section class="section section-alt" id="privacy" style="padding:80px 0;">
+        <div class="container" style="max-width:800px;">
+            <h2>Privacy Policy</h2>
+            <p style="color:var(--gray-600); margin-bottom:24px;">Last updated: 14 March 2026</p>
+
+            <h3>Data Controller</h3>
+            <p>Ethical Digital Marketing Limited, Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124, Ireland. Phone: (021) 206 3107. Email: hello@solicitordigital.ie.</p>
+
+            <h3>What Data We Collect</h3>
+            <p>When you submit our contact form, we collect the information you provide: your name, email address, phone number, firm name, practice area, location, and message. We also use cookies to store your cookie consent preference.</p>
+
+            <h3>How We Use Your Data</h3>
+            <p>We use your contact form data solely to respond to your enquiry and provide information about our services. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+
+            <h3>Legal Basis</h3>
+            <p>We process your data based on your consent, which you provide by ticking the consent checkbox on our contact form. You may withdraw consent at any time by contacting us.</p>
+
+            <h3>Data Retention</h3>
+            <p>We retain your contact form data for up to 24 months after your last interaction with us, after which it is securely deleted.</p>
+
+            <h3>Your Rights</h3>
+            <p>Under GDPR, you have the right to:</p>
+            <ul style="margin-bottom:1rem; padding-left:24px; color:var(--gray-700);">
+                <li>Access the personal data we hold about you</li>
+                <li>Rectify any inaccurate data</li>
+                <li>Request erasure of your data</li>
+                <li>Request restriction of processing</li>
+                <li>Data portability</li>
+                <li>Object to processing</li>
+            </ul>
+            <p>To exercise any of these rights, email us at <a href="mailto:hello@solicitordigital.ie">hello@solicitordigital.ie</a>.</p>
+
+            <h3>Cookies</h3>
+            <p>This site uses a single cookie (stored in your browser's localStorage) to remember your cookie consent preference. We do not use tracking or advertising cookies.</p>
+
+            <h3>Complaints</h3>
+            <p>If you are unhappy with how we handle your data, you have the right to lodge a complaint with the Data Protection Commission at <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">www.dataprotection.ie</a>.</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-company">
-                    <p>&copy; 2025 SolicitorDigital.ie. Operated by Ethical Digital Marketing Limited. Kinsale, Co. Cork, Ireland.</p>
+                    <p>&copy; 2025 SolicitorDigital.ie is a trading name of Ethical Digital Marketing Limited. Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#top">Back to Top</a>
                     <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy Policy</a>
                 </div>
             </div>
         </div>
@@ -1261,6 +1313,32 @@
                 document.querySelector('nav').classList.remove('open');
             });
         });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:var(--navy); border-top:1px solid rgba(255,255,255,0.1); padding:16px 24px;">
+        <div style="max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+            <p style="color:var(--gray-300); margin:0; font-size:0.9rem; flex:1; min-width:250px;">This site uses cookies to remember your preferences. See our <a href="#privacy" style="text-decoration:underline;">Privacy Policy</a> for details.</p>
+            <div style="display:flex; gap:10px;">
+                <button onclick="acceptCookies()" style="padding:10px 24px; background:var(--green); color:var(--white); border:none; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Accept</button>
+                <button onclick="declineCookies()" style="padding:10px 24px; background:transparent; color:var(--gray-300); border:1px solid var(--gray-600); border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Decline</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            if (!localStorage.getItem('cookie_consent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        function declineCookies() {
+            localStorage.setItem('cookie_consent', 'declined');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
     </script>
 
 </body>
