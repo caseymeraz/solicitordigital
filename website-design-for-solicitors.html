@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design for Solicitors Ireland | Law Firm Web Design | SolicitorDigital.ie</title>
+    <meta name="description" content="Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients.">
+    <meta name="keywords" content="solicitor website design, website design for solicitors, solicitor web design, law firm website design, law firm web design, legal website design, web design for lawyers, solicitors website design">
+    <link rel="canonical" href="https://solicitordigital.ie/website-design-for-solicitors">
+    <link rel="alternate" hreflang="en-IE" href="https://solicitordigital.ie/website-design-for-solicitors">
+    <meta property="og:title" content="Website Design for Solicitors Ireland | SolicitorDigital.ie">
+    <meta property="og:description" content="Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients.">
+    <meta property="og:url" content="https://solicitordigital.ie/website-design-for-solicitors">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Website Design for Solicitors Ireland | SolicitorDigital.ie">
+    <meta name="twitter:description" content="Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --navy: #0a1628;
+            --navy-light: #132038;
+            --navy-mid: #1a2d4a;
+            --green: #00a67e;
+            --green-dark: #008f6b;
+            --green-light: #00c896;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ea;
+            --gray-300: #c8cfd8;
+            --gray-600: #5a6578;
+            --gray-700: #3d4654;
+            --gold: #d4a843;
+            --max-width: 1140px;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-700);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3, h4 { color: var(--navy); line-height: 1.3; font-weight: 700; }
+        h1 { font-size: 2.75rem; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--green); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--green-dark); }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 6px;
+            font-weight: 600; font-size: 1rem; cursor: pointer;
+            transition: all 0.25s ease; border: none; text-align: center;
+        }
+        .btn-primary {
+            background: var(--green); color: var(--white);
+        }
+        .btn-primary:hover { background: var(--green-dark); color: var(--white); transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent; color: var(--white);
+            border: 2px solid var(--white);
+        }
+        .btn-outline:hover { background: var(--white); color: var(--navy); }
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--gray-50); }
+        .section-dark { background: var(--navy); color: var(--gray-200); }
+        .section-dark h2, .section-dark h3 { color: var(--white); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+        /* Header */
+        .site-header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 24px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
+        .logo span { color: var(--green); }
+        nav { display: flex; align-items: center; gap: 28px; }
+        nav a { color: var(--gray-300); font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--white); }
+        .nav-cta { padding: 10px 22px; font-size: 0.85rem; }
+        .mobile-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown-menu {
+            display: none; position: absolute; top: 100%; left: -12px;
+            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; padding: 8px 0; min-width: 220px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3); margin-top: 12px; z-index: 100;
+        }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a {
+            display: block; padding: 10px 20px; color: var(--gray-300);
+            font-size: 0.85rem; white-space: nowrap;
+        }
+        .nav-dropdown-menu a:hover { background: rgba(0,166,126,0.1); color: var(--green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+            padding: 160px 0 100px; color: var(--white); position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 800px; height: 800px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,166,126,0.08) 0%, transparent 70%);
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 720px; }
+        .hero h1 { margin-bottom: 1.25rem; color: var(--white); }
+        .hero h1 .highlight { color: var(--green); }
+        .hero p { font-size: 1.2rem; color: var(--gray-300); margin-bottom: 2rem; max-width: 600px; }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 3rem; }
+        .trust-bar { display: flex; gap: 48px; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-number { display: block; font-size: 2rem; font-weight: 700; color: var(--green); line-height: 1.2; }
+        .trust-label { font-size: 0.85rem; color: var(--gray-300); }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--white); border: 1px solid var(--gray-200);
+            border-radius: 10px; padding: 32px; transition: all 0.3s;
+        }
+        .service-card:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+        .service-card h3 { font-size: 1.15rem; }
+        .service-card p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 0; }
+
+        /* Practice Areas */
+        .practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .practice-item {
+            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 24px; text-align: center;
+            transition: all 0.3s;
+        }
+        .practice-item:hover { border-color: var(--green); transform: translateY(-2px); }
+        .practice-item h3 { font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+        .practice-item p { font-size: 0.85rem; color: var(--gray-300); margin-bottom: 0; }
+        .practice-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+
+        /* Process Steps */
+        .process-step {
+            display: flex; gap: 24px; align-items: flex-start;
+            padding: 28px 0; border-bottom: 1px solid var(--gray-200);
+        }
+        .process-step:last-child { border-bottom: none; }
+        .step-number {
+            flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+            background: var(--green); color: var(--white); display: flex;
+            align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;
+        }
+        .step-content h3 { margin-bottom: 6px; }
+        .step-content p { margin-bottom: 0; color: var(--gray-600); }
+
+        /* Results */
+        .result-card {
+            background: var(--navy-light); border-radius: 10px; padding: 36px;
+            text-align: center; border: 1px solid rgba(255,255,255,0.06);
+        }
+        .result-number { font-size: 2.5rem; font-weight: 700; color: var(--green); display: block; line-height: 1.1; }
+        .result-label { font-size: 0.95rem; color: var(--gray-300); margin-top: 8px; display: block; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 1.05rem;
+            color: var(--navy); gap: 16px;
+        }
+        .faq-question:hover { color: var(--green); }
+        .faq-arrow { flex-shrink: 0; transition: transform 0.3s; font-size: 0.85rem; color: var(--green); }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-answer-inner { padding: 0 0 20px; color: var(--gray-600); line-height: 1.8; }
+
+        /* Footer */
+        .site-footer {
+            background: #060e1a; color: var(--gray-600); padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--gray-600); font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--green); }
+        .footer-company { font-size: 0.85rem; }
+
+        /* Utility */
+        .text-green { color: var(--green); }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 3rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mt-6 { margin-top: 3rem; }
+        .section-intro { max-width: 680px; margin: 0 auto 3rem; text-align: center; color: var(--gray-600); font-size: 1.1rem; }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { padding: 6px 0 6px 28px; position: relative; }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,166,126,0.08), rgba(0,166,126,0.03));
+            border-left: 4px solid var(--green); padding: 24px 28px; border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr 1fr; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.7rem; }
+        }
+        @media (max-width: 640px) {
+            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .hero { padding: 130px 0 70px; }
+            .section { padding: 60px 0; }
+            .trust-bar { gap: 32px; }
+            nav { display: none; }
+            nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+            nav.open .nav-dropdown-menu { display: block; position: static; background: none; border: none; box-shadow: none; padding: 0 0 0 12px; margin: 0; min-width: 0; }
+            .mobile-toggle { display: block; }
+            .header-inner { padding: 12px 24px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Website Design for Solicitors",
+        "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://solicitordigital.ie/#business"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Ireland"
+        },
+        "url": "https://solicitordigital.ie/website-design-for-solicitors",
+        "name": "Website Design for Solicitors Ireland",
+        "description": "Professional website design for solicitors and law firms across Ireland."
+    }
+    </script>
+</head>
+<body>
+
+<header class="site-header" id="header">
+    <div class="header-inner">
+        <a href="/" class="logo">Solicitor<span>Digital</span>.ie</a>
+        <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+        <nav>
+            <div class="nav-dropdown">
+                <a href="/digital-marketing-for-solicitors">Services &#9662;</a>
+                <div class="nav-dropdown-menu">
+                    <a href="/seo-for-solicitors">SEO for Solicitors</a>
+                    <a href="/website-design-for-solicitors">Website Design</a>
+                    <a href="/digital-marketing-for-solicitors">Digital Marketing</a>
+                    <a href="/ppc-for-solicitors">PPC / Google Ads</a>
+                    <a href="/local-seo-for-solicitors">Local SEO</a>
+                    <a href="/content-marketing-for-solicitors">Content Marketing</a>
+                </div>
+            </div>
+            <a href="/#process">Process</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/#contact" class="btn btn-primary nav-cta">Free SEO Audit</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Website Design for <span class="highlight">Solicitors</span></h1>
+            <p>Your website is often the first impression a potential client has of your firm. If it looks outdated, loads slowly, or doesn't work on mobile, they'll go to a competitor instead. We build solicitor websites that earn trust and generate enquiries.</p>
+            <div class="hero-buttons">
+                <a href="/#contact" class="btn btn-primary">Get a Free Website Review</a>
+                <a href="#process" class="btn btn-outline">See Our Process</a>
+            </div>
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span class="trust-number">15+</span>
+                    <span class="trust-label">Years in Legal Marketing</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">500+</span>
+                    <span class="trust-label">Law Firm Websites Built</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">100%</span>
+                    <span class="trust-label">LSRA Compliant</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">&lt;2s</span>
+                    <span class="trust-label">Average Load Time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Solicitor Websites Are Different -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Solicitor Websites Are Different</h2>
+        <p class="section-intro">A law firm website isn't like any other business site. It needs to meet regulatory requirements, build immediate trust, and turn visitors into people who pick up the phone. Generic web designers don't understand these demands.</p>
+        <div class="grid-2">
+            <div>
+                <h3>Compliance Comes First</h3>
+                <p>The LSRA (Legal Services Regulatory Authority) sets specific rules about how solicitors can advertise their services in Ireland. Your website is advertising, and every page needs to comply. That includes how you present testimonials, the claims you make about outcomes, and how you describe your fees.</p>
+                <p>We build every site with LSRA guidelines in mind from the start, not as an afterthought. This protects your firm from regulatory issues and gives potential clients confidence that you operate professionally.</p>
+                <p>Most generic web design agencies have never heard of the LSRA. That alone should tell you why working with a legal-sector specialist matters.</p>
+            </div>
+            <div>
+                <h3>Trust Signals and Conversion</h3>
+                <p>When someone visits a solicitor's website, they're usually dealing with something stressful: a property purchase, a family dispute, a workplace issue, or an injury. They need to trust you before they'll make contact.</p>
+                <ul class="check-list">
+                    <li>Professional design that reflects the seriousness of legal work</li>
+                    <li>Clear display of qualifications, Law Society membership, and accreditations</li>
+                    <li>Easy-to-find contact details on every page</li>
+                    <li>Practice area pages that answer real client questions</li>
+                    <li>Fast load times and mobile-friendly layouts</li>
+                    <li>Calls to action that make getting in touch simple</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>The reality:</strong> A good-looking website isn't enough. It needs to be built with a clear structure that guides visitors from their first question to contacting your firm. Every design decision we make is informed by data from hundreds of law firm websites, backed by the experience of Juris Digital.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Build -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="text-center mb-4">What We Build for Solicitors</h2>
+        <p class="section-intro">Every website we deliver is purpose-built for Irish law firms. No templates pulled from a library and filled in with your logo. These are designed from the ground up to perform.</p>
+        <div class="grid-3">
+            <div class="service-card">
+                <span class="service-icon">&#128241;</span>
+                <h3>Fully Responsive Design</h3>
+                <p>Over 60% of legal searches happen on mobile. Your site will look and work perfectly on phones, tablets, and desktops. No pinching, zooming, or broken layouts.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#9889;</span>
+                <h3>Fast Loading Speed</h3>
+                <p>Slow websites lose visitors. We build lightweight, optimised sites that load in under two seconds. That means better user experience and better Google rankings.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#9878;</span>
+                <h3>LSRA Compliant</h3>
+                <p>Every page is reviewed for compliance with LSRA advertising regulations. From testimonials to fee information, your site will meet all requirements from day one.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128269;</span>
+                <h3>SEO-Ready Structure</h3>
+                <p>Your website is built with search engine optimisation baked in. Proper heading structure, schema markup, meta tags, and clean URLs so Google can find and rank your pages.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128274;</span>
+                <h3>Secure and Reliable</h3>
+                <p>SSL certificates, regular backups, and secure hosting as standard. Your clients' data is protected, and your site stays online when it matters most.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128200;</span>
+                <h3>Built to Convert</h3>
+                <p>Strategic placement of contact forms, click-to-call buttons, and clear calls to action. Every page is designed to turn a visitor into a client enquiry.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">Features Included in Every Solicitor Website</h2>
+        <p class="section-intro">We don't charge extra for the features that should come as standard. Here's what's included with every law firm website we build.</p>
+        <div class="grid-2">
+            <div>
+                <h3>Client-Facing Features</h3>
+                <ul class="check-list">
+                    <li>Contact forms with email notifications and spam protection</li>
+                    <li>Dedicated practice area pages for each service your firm offers</li>
+                    <li>Solicitor profile pages with photos, qualifications, and specialisms</li>
+                    <li>Client testimonial sections (LSRA-compliant formatting)</li>
+                    <li>Google Maps integration showing your office location</li>
+                    <li>Click-to-call functionality on mobile devices</li>
+                    <li>FAQ sections to answer common client questions</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Technical Features</h3>
+                <ul class="check-list">
+                    <li>SSL certificate for secure browsing (HTTPS)</li>
+                    <li>Schema markup for local business and legal services</li>
+                    <li>Google Analytics and Search Console setup</li>
+                    <li>XML sitemap and robots.txt configuration</li>
+                    <li>Image optimisation for fast page loads</li>
+                    <li>Cookie consent banner compliant with Irish data protection law</li>
+                    <li>Mobile-first responsive design tested across all devices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Web Design Process -->
+<section class="section section-alt" id="process">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Web Design Process</h2>
+        <p class="section-intro">We follow a clear, structured process so you always know what's happening and when. No surprises, no delays, no vague timelines.</p>
+        <div style="max-width: 740px; margin: 0 auto;">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Discovery and Planning</h3>
+                    <p>We start by learning about your firm, your practice areas, your target clients, and the locations you serve. Whether you're a sole practitioner in Galway or a multi-partner firm in Dublin, we tailor everything to your specific situation. We review your current site (if you have one), assess your competitors, and define the goals for the new build.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Content and Structure</h3>
+                    <p>We map out every page your site needs: homepage, practice areas, solicitor profiles, about, contact, and any location pages for cities like Cork, Limerick, or Waterford. We write or refine the content for each page, making sure it's clear, client-focused, and optimised for search engines.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Design and Development</h3>
+                    <p>We build your site with a clean, professional design that reflects the standards your clients expect from a law firm. You'll see a preview before anything goes live and have the opportunity to request changes. Nothing launches without your sign-off.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Testing and Launch</h3>
+                    <p>Before launch, we test every page across browsers and devices. We check load speed, form submissions, mobile display, and all technical SEO elements. Once everything passes, we handle the launch, DNS setup, and redirects from your old site so you don't lose any existing search rankings.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Ongoing Support</h3>
+                    <p>Your website isn't a "set and forget" project. We provide ongoing hosting, security updates, and content changes so your site stays fast, secure, and current. Need to add a new solicitor or practice area? We handle it. Powered by the experience of Juris Digital, your site continues to improve over time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section section-alt" id="faq">
+    <div class="container">
+        <h2 class="text-center mb-6">Frequently Asked Questions About Solicitor Web Design</h2>
+        <div style="max-width: 760px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long does it take to build a solicitor website?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Most solicitor websites take 4 to 6 weeks from kickoff to launch. The timeline depends on how many practice area pages you need, how quickly content is approved, and whether we're writing the copy from scratch. Larger firms with multiple offices and many practice areas may take a bit longer. We'll give you a clear timeline before we start.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Will my website be compliant with LSRA advertising rules?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes. We build every solicitor website with LSRA (Legal Services Regulatory Authority) guidelines in mind. This includes how testimonials are displayed, claims about case outcomes, fee transparency, and any other advertising requirements that apply to solicitors in Ireland. We stay up to date with regulatory changes so your site remains compliant.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do I need to provide the website content myself?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No. We can write all the content for your website, including practice area pages, solicitor bios, and your homepage. We'll ask you some questions about your firm and services, then produce clear, client-focused copy that's also optimised for Google. If you prefer to write your own content, we're happy to work with that too.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can you redesign my existing solicitor website?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Absolutely. Many of our clients come to us with an existing website that's outdated or underperforming. We'll assess your current site, preserve any SEO value it has, and rebuild it with a modern design, faster performance, and better conversion elements. We handle all redirects so you don't lose your existing Google rankings during the transition.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Will my website work well on mobile phones?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Every website we build is mobile-first, meaning we design for phones and tablets before scaling up to desktops. Google uses mobile-first indexing, so your mobile experience directly affects your search rankings. We test across iPhones, Android devices, and tablets to make sure everything works perfectly.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What platform do you build solicitor websites on?</span>
+                    <span class="faq-arrow">&#9660;</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        We use WordPress for most solicitor websites because it gives us full control over SEO, speed, and functionality. WordPress powers over 40% of all websites globally and is well-supported, secure (when properly maintained), and flexible enough to grow with your firm. We don't use drag-and-drop website builders that produce bloated, slow code.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section-dark text-center">
+    <div class="container">
+        <h2>Ready for a Website That Works as Hard as You Do?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--gray-300); font-size: 1.15rem;">Get a free, no-obligation review of your current website. We'll show you what's working, what's not, and what a new site could do for your firm's client pipeline.</p>
+        <a href="/#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Get Your Free Website Review</a>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-company">
+                <p>&copy; 2025 SolicitorDigital.ie is a trading name of Ethical Digital Marketing Limited. Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/seo-for-solicitors">SEO</a>
+                <a href="/website-design-for-solicitors">Web Design</a>
+                <a href="/ppc-for-solicitors">PPC</a>
+                <a href="/local-seo-for-solicitors">Local SEO</a>
+                <a href="/#contact">Contact</a>
+                <a href="/#privacy">Privacy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+            document.querySelector('nav').classList.remove('open');
+        });
+    });
+</script>
+
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:var(--navy); border-top:1px solid rgba(255,255,255,0.1); padding:16px 24px;">
+    <div style="max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <p style="color:var(--gray-300); margin:0; font-size:0.9rem; flex:1; min-width:250px;">This site uses cookies to remember your preferences. See our <a href="/#privacy" style="text-decoration:underline;">Privacy Policy</a> for details.</p>
+        <div style="display:flex; gap:10px;">
+            <button onclick="acceptCookies()" style="padding:10px 24px; background:var(--green); color:var(--white); border:none; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Accept</button>
+            <button onclick="declineCookies()" style="padding:10px 24px; background:transparent; color:var(--gray-300); border:1px solid var(--gray-600); border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Decline</button>
+        </div>
+    </div>
+</div>
+<script>
+    (function() {
+        if (!localStorage.getItem('cookie_consent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    })();
+    function acceptCookies() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function declineCookies() {
+        localStorage.setItem('cookie_consent', 'declined');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
