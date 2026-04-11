@@ -2,6 +2,20 @@
   "cleanUrls": true,
   "routes": [
     {
+      "src": "/sem-for-attorneys/?",
+      "status": 301,
+      "headers": {
+        "Location": "/ppc-for-solicitors"
+      }
+    },
+    {
+      "src": "/search-engine-optimisation-for-solicitors-lawyers/?",
+      "status": 301,
+      "headers": {
+        "Location": "/seo-for-solicitors"
+      }
+    },
+    {
       "src": "/details/(.*)",
       "status": 410,
       "headers": {
