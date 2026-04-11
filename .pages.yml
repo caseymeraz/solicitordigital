@@ -1,0 +1,116 @@
+media:
+  input: src/images
+  output: /images
+
+content:
+  - name: home
+    label: Home
+    type: file
+    path: src/index.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: seo
+    label: SEO for Solicitors
+    type: file
+    path: src/seo-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: ppc
+    label: PPC for Solicitors
+    type: file
+    path: src/ppc-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: local-seo
+    label: Local SEO for Solicitors
+    type: file
+    path: src/local-seo-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: content-marketing
+    label: Content Marketing for Solicitors
+    type: file
+    path: src/content-marketing-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: digital-marketing
+    label: Digital Marketing for Solicitors
+    type: file
+    path: src/digital-marketing-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: website-design
+    label: Website Design for Solicitors
+    type: file
+    path: src/website-design-for-solicitors.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }

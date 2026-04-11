@@ -1,0 +1,24 @@
+{
+  "name": "solicitordigital",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseymeraz/solicitordigital.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caseymeraz/solicitordigital/issues"
+  },
+  "homepage": "https://github.com/caseymeraz/solicitordigital#readme",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

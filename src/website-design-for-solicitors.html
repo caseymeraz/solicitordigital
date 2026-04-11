@@ -1,22 +1,34 @@
+---
+permalink: /website-design-for-solicitors.html
+title: "Website Design for Solicitors Ireland | Law Firm Web Design | SolicitorDigital.ie"
+description: "Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients."
+keywords: "solicitor website design, website design for solicitors, solicitor web design, law firm website design, law firm web design, legal website design, web design for lawyers, solicitors website design"
+canonical: "https://solicitordigital.ie/website-design-for-solicitors"
+og_title: "Website Design for Solicitors Ireland | SolicitorDigital.ie"
+og_description: "Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients."
+og_url: "https://solicitordigital.ie/website-design-for-solicitors"
+twitter_title: "Website Design for Solicitors Ireland | SolicitorDigital.ie"
+twitter_description: "Professional website design for solicitors in Ireland. Fast, mobile-friendly, LSRA-compliant law firm websites built to convert visitors into clients."
+---
 <!DOCTYPE html>
 <html lang="en-IE">
 <head>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="HrtVvRQCRTM9eVpPKCmYzw" async></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content Marketing for Solicitors Ireland | Legal Content Strategy | SolicitorDigital.ie</title>
-    <meta name="description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
-    <meta name="keywords" content="content marketing for solicitors, content marketing for legal firms, content marketing agency for lawyers, law firm content marketing, legal content marketing">
-    <link rel="canonical" href="https://solicitordigital.ie/content-marketing-for-solicitors">
-    <link rel="alternate" hreflang="en-IE" href="https://solicitordigital.ie/content-marketing-for-solicitors">
-    <meta property="og:title" content="Content Marketing for Solicitors Ireland | SolicitorDigital.ie">
-    <meta property="og:description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
-    <meta property="og:url" content="https://solicitordigital.ie/content-marketing-for-solicitors">
+    <title>{{ title | safe }}</title>
+    <meta name="description" content="{{ description | safe }}">
+    <meta name="keywords" content="{{ keywords | safe }}">
+    <link rel="canonical" href="{{ canonical | safe }}">
+    <link rel="alternate" hreflang="en-IE" href="{{ canonical | safe }}">
+    <meta property="og:title" content="{{ og_title | safe }}">
+    <meta property="og:description" content="{{ og_description | safe }}">
+    <meta property="og:url" content="{{ og_url | safe }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_IE">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Content Marketing for Solicitors Ireland | SolicitorDigital.ie">
-    <meta name="twitter:description" content="Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search.">
+    <meta name="twitter:title" content="{{ twitter_title | safe }}">
+    <meta name="twitter:description" content="{{ twitter_description | safe }}">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
@@ -140,6 +152,18 @@
         .service-card h3 { font-size: 1.15rem; }
         .service-card p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 0; }
 
+        /* Practice Areas */
+        .practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .practice-item {
+            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 24px; text-align: center;
+            transition: all 0.3s;
+        }
+        .practice-item:hover { border-color: var(--green); transform: translateY(-2px); }
+        .practice-item h3 { font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+        .practice-item p { font-size: 0.85rem; color: var(--gray-300); margin-bottom: 0; }
+        .practice-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+
         /* Process Steps */
         .process-step {
             display: flex; gap: 24px; align-items: flex-start;
@@ -153,6 +177,14 @@
         }
         .step-content h3 { margin-bottom: 6px; }
         .step-content p { margin-bottom: 0; color: var(--gray-600); }
+
+        /* Results */
+        .result-card {
+            background: var(--navy-light); border-radius: 10px; padding: 36px;
+            text-align: center; border: 1px solid rgba(255,255,255,0.06);
+        }
+        .result-number { font-size: 2.5rem; font-weight: 700; color: var(--green); display: block; line-height: 1.1; }
+        .result-label { font-size: 0.95rem; color: var(--gray-300); margin-top: 8px; display: block; }
 
         /* FAQ */
         .faq-item { border-bottom: 1px solid var(--gray-200); }
@@ -197,12 +229,12 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr 1fr; }
             h1 { font-size: 2.2rem; }
             h2 { font-size: 1.7rem; }
         }
         @media (max-width: 640px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr; }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
             .hero { padding: 130px 0 70px; }
@@ -219,7 +251,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Content Marketing for Solicitors",
+        "serviceType": "Website Design for Solicitors",
         "provider": {
             "@type": "LocalBusiness",
             "@id": "https://solicitordigital.ie/#business"
@@ -228,9 +260,9 @@
             "@type": "Country",
             "name": "Ireland"
         },
-        "url": "https://solicitordigital.ie/content-marketing-for-solicitors",
-        "name": "Content Marketing for Solicitors Ireland",
-        "description": "Content marketing services for solicitors in Ireland. Practice area pages, blog posts, FAQs and legal guides that build authority and attract clients through search."
+        "url": "https://solicitordigital.ie/website-design-for-solicitors",
+        "name": "Website Design for Solicitors Ireland",
+        "description": "Professional website design for solicitors and law firms across Ireland."
     }
     </script>
 </head>
@@ -263,10 +295,10 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>Content Marketing <span class="highlight">for Solicitors</span></h1>
-            <p>Your potential clients are searching Google with legal questions every day. The firms that answer those questions with clear, well-written content are the ones winning new business. We create that content for you.</p>
+            <h1>Website Design for <span class="highlight">Solicitors</span></h1>
+            <p>Your website is often the first impression a potential client has of your firm. If it looks outdated, loads slowly, or doesn't work on mobile, they'll go to a competitor instead. We build solicitor websites that earn trust and generate enquiries.</p>
             <div class="hero-buttons">
-                <a href="/#contact" class="btn btn-primary">Get a Free Content Audit</a>
+                <a href="/#contact" class="btn btn-primary">Get a Free Website Review</a>
                 <a href="#process" class="btn btn-outline">See Our Process</a>
             </div>
             <div class="trust-bar">
@@ -276,218 +308,239 @@
                 </div>
                 <div class="trust-item">
                     <span class="trust-number">500+</span>
-                    <span class="trust-label">Law Firm Clients</span>
+                    <span class="trust-label">Law Firm Websites Built</span>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-number">10k+</span>
-                    <span class="trust-label">Legal Pages Published</span>
+                    <span class="trust-number">100%</span>
+                    <span class="trust-label">LSRA Compliant</span>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-number">3x</span>
-                    <span class="trust-label">Avg. Traffic Growth</span>
+                    <span class="trust-number">&lt;2s</span>
+                    <span class="trust-label">Average Load Time</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Why Content Matters -->
+<!-- Why Solicitor Websites Are Different -->
 <section class="section">
     <div class="container">
-        <h2 class="text-center mb-4">Why Content Marketing Matters for Solicitors</h2>
-        <p class="section-intro">Google wants to show searchers the most helpful, trustworthy results. For legal topics, that bar is even higher. Well-written content is how your firm clears it.</p>
+        <h2 class="text-center mb-4">Why Solicitor Websites Are Different</h2>
+        <p class="section-intro">A law firm website isn't like any other business site. It needs to meet regulatory requirements, build immediate trust, and turn visitors into people who pick up the phone. Generic web designers don't understand these demands.</p>
         <div class="grid-2">
             <div>
-                <h3>E-E-A-T and Your Firm's Authority</h3>
-                <p>Google evaluates legal websites using a framework called E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness. Legal services fall under what Google calls "Your Money or Your Life" (YMYL) topics, meaning the quality standard is stricter than for most industries.</p>
-                <p>What does that mean in practice? Your website needs to demonstrate that real solicitors with real qualifications are behind the advice. Thin pages with a paragraph of generic text will not rank. Google wants depth, accuracy, and evidence of genuine legal knowledge.</p>
-                <p>The firms that invest in quality content are the ones Google rewards with visibility. Every practice area page, blog post, and FAQ you publish is an opportunity to prove your firm's expertise to both Google and potential clients.</p>
+                <h3>Compliance Comes First</h3>
+                <p>The LSRA (Legal Services Regulatory Authority) sets specific rules about how solicitors can advertise their services in Ireland. Your website is advertising, and every page needs to comply. That includes how you present testimonials, the claims you make about outcomes, and how you describe your fees.</p>
+                <p>We build every site with LSRA guidelines in mind from the start, not as an afterthought. This protects your firm from regulatory issues and gives potential clients confidence that you operate professionally.</p>
+                <p>Most generic web design agencies have never heard of the LSRA. That alone should tell you why working with a legal-sector specialist matters.</p>
             </div>
             <div>
-                <h3>Topical Authority Wins Rankings</h3>
-                <p>Topical authority means covering a subject area thoroughly enough that Google sees your site as the go-to resource. A single page about "family law" is not enough. You need pages covering separation, divorce, custody, maintenance, prenuptial agreements, and more.</p>
-                <p>When your site covers a practice area from every angle, Google starts ranking all of those pages higher. Each piece of content supports the others. A blog post answering "How long does a divorce take in Ireland?" reinforces the authority of your main divorce solicitor page.</p>
+                <h3>Trust Signals and Conversion</h3>
+                <p>When someone visits a solicitor's website, they're usually dealing with something stressful: a property purchase, a family dispute, a workplace issue, or an injury. They need to trust you before they'll make contact.</p>
                 <ul class="check-list">
-                    <li>Practice area pages build your core service visibility</li>
-                    <li>Blog posts answer the questions clients search before they call</li>
-                    <li>FAQ pages capture long-tail queries your competitors miss</li>
-                    <li>Location pages connect your services to specific cities and counties</li>
-                    <li>Legal guides position your firm as a trusted resource</li>
+                    <li>Professional design that reflects the seriousness of legal work</li>
+                    <li>Clear display of qualifications, Law Society membership, and accreditations</li>
+                    <li>Easy-to-find contact details on every page</li>
+                    <li>Practice area pages that answer real client questions</li>
+                    <li>Fast load times and mobile-friendly layouts</li>
+                    <li>Calls to action that make getting in touch simple</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>The reality:</strong> A good-looking website isn't enough. It needs to be built with a clear structure that guides visitors from their first question to contacting your firm. Every design decision we make is informed by data from hundreds of law firm websites, backed by the experience of Juris Digital.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Build -->
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="text-center mb-4">What We Build for Solicitors</h2>
+        <p class="section-intro">Every website we deliver is purpose-built for Irish law firms. No templates pulled from a library and filled in with your logo. These are designed from the ground up to perform.</p>
+        <div class="grid-3">
+            <div class="service-card">
+                <span class="service-icon">&#128241;</span>
+                <h3>Fully Responsive Design</h3>
+                <p>Over 60% of legal searches happen on mobile. Your site will look and work perfectly on phones, tablets, and desktops. No pinching, zooming, or broken layouts.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#9889;</span>
+                <h3>Fast Loading Speed</h3>
+                <p>Slow websites lose visitors. We build lightweight, optimised sites that load in under two seconds. That means better user experience and better Google rankings.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#9878;</span>
+                <h3>LSRA Compliant</h3>
+                <p>Every page is reviewed for compliance with LSRA advertising regulations. From testimonials to fee information, your site will meet all requirements from day one.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128269;</span>
+                <h3>SEO-Ready Structure</h3>
+                <p>Your website is built with search engine optimisation baked in. Proper heading structure, schema markup, meta tags, and clean URLs so Google can find and rank your pages.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128274;</span>
+                <h3>Secure and Reliable</h3>
+                <p>SSL certificates, regular backups, and secure hosting as standard. Your clients' data is protected, and your site stays online when it matters most.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">&#128200;</span>
+                <h3>Built to Convert</h3>
+                <p>Strategic placement of contact forms, click-to-call buttons, and clear calls to action. Every page is designed to turn a visitor into a client enquiry.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-4">Features Included in Every Solicitor Website</h2>
+        <p class="section-intro">We don't charge extra for the features that should come as standard. Here's what's included with every law firm website we build.</p>
+        <div class="grid-2">
+            <div>
+                <h3>Client-Facing Features</h3>
+                <ul class="check-list">
+                    <li>Contact forms with email notifications and spam protection</li>
+                    <li>Dedicated practice area pages for each service your firm offers</li>
+                    <li>Solicitor profile pages with photos, qualifications, and specialisms</li>
+                    <li>Client testimonial sections (LSRA-compliant formatting)</li>
+                    <li>Google Maps integration showing your office location</li>
+                    <li>Click-to-call functionality on mobile devices</li>
+                    <li>FAQ sections to answer common client questions</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Technical Features</h3>
+                <ul class="check-list">
+                    <li>SSL certificate for secure browsing (HTTPS)</li>
+                    <li>Schema markup for local business and legal services</li>
+                    <li>Google Analytics and Search Console setup</li>
+                    <li>XML sitemap and robots.txt configuration</li>
+                    <li>Image optimisation for fast page loads</li>
+                    <li>Cookie consent banner compliant with Irish data protection law</li>
+                    <li>Mobile-first responsive design tested across all devices</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Types of Content We Create -->
-<section class="section section-alt">
+<!-- Our Web Design Process -->
+<section class="section section-alt" id="process">
     <div class="container">
-        <h2 class="text-center mb-4">Content We Create for Law Firms</h2>
-        <p class="section-intro">Every piece of content we produce targets specific search terms your potential clients use. Nothing is written without a purpose. Here is what we deliver.</p>
-        <div class="grid-3">
-            <div class="service-card">
-                <span class="service-icon">&#128196;</span>
-                <h3>Practice Area Pages</h3>
-                <p>In-depth pages for each area of law your firm handles. These are your most important pages for converting visitors into clients. We write them to rank for high-intent terms like "personal injury solicitor Dublin" or "employment law solicitor Cork."</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">&#9997;</span>
-                <h3>Blog Posts</h3>
-                <p>Regular, original articles that answer the questions your clients are already searching. Topics like "What happens if someone contests a will in Ireland?" or "Can I claim for unfair dismissal?" These posts bring in traffic and build trust before a client ever picks up the phone.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">&#10067;</span>
-                <h3>FAQ Pages</h3>
-                <p>Structured FAQ content targeting long-tail search queries. These pages capture the exact phrases people type into Google and provide clear, helpful answers. They also qualify for rich snippets in search results, giving your firm more visibility on the results page.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">&#128214;</span>
-                <h3>Legal Guides</h3>
-                <p>Longer-form guides covering topics like "A Complete Guide to Buying a House in Ireland" or "Understanding Your Rights After a Workplace Injury." These attract backlinks, establish authority, and serve as reference content that ranks for years.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">&#128205;</span>
-                <h3>Location Pages</h3>
-                <p>Dedicated pages targeting the cities and towns your firm serves. Whether you need to rank in Dublin, Galway, Limerick, Waterford, or across multiple counties, location pages connect your services to the areas where your clients search.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">&#128202;</span>
-                <h3>Case Study Content</h3>
-                <p>Anonymised case studies and outcome summaries (where LSRA guidelines allow) that show potential clients the types of matters your firm handles. This type of content builds confidence and demonstrates real-world experience.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Our Content Process -->
-<section class="section" id="process">
-    <div class="container">
-        <h2 class="text-center mb-4">Our Content Marketing Process</h2>
-        <p class="section-intro">Backed by the expertise of Juris Digital, our process is built specifically for solicitor firms. Every step is designed to produce content that ranks, converts, and complies with Irish regulations.</p>
+        <h2 class="text-center mb-4">Our Web Design Process</h2>
+        <p class="section-intro">We follow a clear, structured process so you always know what's happening and when. No surprises, no delays, no vague timelines.</p>
         <div style="max-width: 740px; margin: 0 auto;">
             <div class="process-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3>Research and Keyword Mapping</h3>
-                    <p>We start by identifying what your potential clients actually search for. Using keyword research tools and competitor analysis, we map out every topic your firm should cover. Each keyword is matched to a specific page type, whether that is a practice area page, blog post, or FAQ.</p>
+                    <h3>Discovery and Planning</h3>
+                    <p>We start by learning about your firm, your practice areas, your target clients, and the locations you serve. Whether you're a sole practitioner in Galway or a multi-partner firm in Dublin, we tailor everything to your specific situation. We review your current site (if you have one), assess your competitors, and define the goals for the new build.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3>Writing and Legal Review</h3>
-                    <p>Our writers produce original content tailored to Irish law. We write in plain English, not legalese. Every page is structured for both search engines and real people, with proper headings, internal links, and calls to action. We then send the content to your team for legal accuracy review before publishing.</p>
+                    <h3>Content and Structure</h3>
+                    <p>We map out every page your site needs: homepage, practice areas, solicitor profiles, about, contact, and any location pages for cities like Cork, Limerick, or Waterford. We write or refine the content for each page, making sure it's clear, client-focused, and optimised for search engines.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>On-Page Optimisation</h3>
-                    <p>Before publishing, every piece goes through our on-page checklist: title tags, meta descriptions, header structure, schema markup, image alt text, internal linking, and mobile formatting. These details are what separate content that ranks from content that sits on page five.</p>
+                    <h3>Design and Development</h3>
+                    <p>We build your site with a clean, professional design that reflects the standards your clients expect from a law firm. You'll see a preview before anything goes live and have the opportunity to request changes. Nothing launches without your sign-off.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3>Publishing and Distribution</h3>
-                    <p>Content is published on your website and submitted for indexing. Where appropriate, we distribute it through your firm's social channels and email list. Each piece is added to your site's internal linking structure so it supports and strengthens your other pages.</p>
+                    <h3>Testing and Launch</h3>
+                    <p>Before launch, we test every page across browsers and devices. We check load speed, form submissions, mobile display, and all technical SEO elements. Once everything passes, we handle the launch, DNS setup, and redirects from your old site so you don't lose any existing search rankings.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="step-number">5</div>
                 <div class="step-content">
-                    <h3>Performance Tracking and Updates</h3>
-                    <p>We monitor every page's rankings, traffic, and engagement. Content that underperforms gets revised. Pages that rank well get expanded. You receive monthly reports showing exactly which pages are driving traffic and enquiries to your firm.</p>
+                    <h3>Ongoing Support</h3>
+                    <p>Your website isn't a "set and forget" project. We provide ongoing hosting, security updates, and content changes so your site stays fast, secure, and current. Need to add a new solicitor or practice area? We handle it. Powered by the experience of Juris Digital, your site continues to improve over time.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- LSRA Compliance -->
-<section class="section section-alt">
-    <div class="container">
-        <h2 class="text-center mb-4">LSRA Compliance in Legal Content</h2>
-        <p class="section-intro">Publishing content for a solicitor's website is not the same as writing for any other business. There are rules, and getting them wrong can cause real problems.</p>
-        <div style="max-width: 740px; margin: 0 auto;">
-            <div class="highlight-box">
-                <h3>Why This Matters</h3>
-                <p>The Legal Services Regulatory Authority (LSRA) sets advertising and marketing guidelines that all solicitors in Ireland must follow. This includes the content published on your website. Claims about results, client testimonials, comparisons with other firms, and certain language around legal outcomes all need to meet LSRA standards.</p>
-                <p>Many generic content agencies are not aware of these rules. They produce content that could put your firm at risk. We build LSRA compliance into every stage of our writing process. Our team knows what can and cannot be said on a solicitor's website, and we work with your firm to ensure every page meets both regulatory requirements and your own professional standards.</p>
-                <p style="margin-bottom: 0;">This is one of the key reasons solicitors choose a specialist legal marketing agency over a generalist. The cost of getting it wrong is too high.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="section" id="faq">
+<section class="section section-alt" id="faq">
     <div class="container">
-        <h2 class="text-center mb-6">Content Marketing FAQs for Solicitors</h2>
+        <h2 class="text-center mb-6">Frequently Asked Questions About Solicitor Web Design</h2>
         <div style="max-width: 760px; margin: 0 auto;">
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>How often should a solicitor's website publish new content?</span>
+                    <span>How long does it take to build a solicitor website?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        For most firms, two to four new pieces of content per month is a good starting point. This could be a mix of blog posts, FAQ updates, and new practice area pages. Consistency matters more than volume. Publishing one well-researched article per week will outperform publishing ten rushed pieces in a single month. We tailor the content calendar to your firm's capacity and goals.
+                        Most solicitor websites take 4 to 6 weeks from kickoff to launch. The timeline depends on how many practice area pages you need, how quickly content is approved, and whether we're writing the copy from scratch. Larger firms with multiple offices and many practice areas may take a bit longer. We'll give you a clear timeline before we start.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Do you write the content or do our solicitors need to?</span>
+                    <span>Will my website be compliant with LSRA advertising rules?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        We handle the writing. Our team researches and drafts every piece, then sends it to your firm for review. Your solicitors check the content for legal accuracy and approve it before publication. This keeps your team's time commitment to a minimum while ensuring everything published under your firm's name is accurate and appropriate.
+                        Yes. We build every solicitor website with LSRA (Legal Services Regulatory Authority) guidelines in mind. This includes how testimonials are displayed, claims about case outcomes, fee transparency, and any other advertising requirements that apply to solicitors in Ireland. We stay up to date with regulatory changes so your site remains compliant.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>How long does it take for content to start ranking on Google?</span>
+                    <span>Do I need to provide the website content myself?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        New content typically starts appearing in search results within a few weeks of being indexed. However, reaching page one for competitive terms usually takes three to six months. Less competitive, long-tail keywords can rank faster. The key is consistency. Firms that publish regularly build topical authority faster, which lifts the rankings of all their pages over time.
+                        No. We can write all the content for your website, including practice area pages, solicitor bios, and your homepage. We'll ask you some questions about your firm and services, then produce clear, client-focused copy that's also optimised for Google. If you prefer to write your own content, we're happy to work with that too.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>What is the difference between content marketing and SEO?</span>
+                    <span>Can you redesign my existing solicitor website?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Content marketing is one part of a broader SEO strategy. SEO also includes technical work (site speed, mobile performance, crawlability), local SEO (Google Business Profile, citations), and link building. Content marketing focuses on creating the pages that rank. Without good content, there is nothing for Google to show in search results. The two work together, and we often deliver both as part of the same engagement.
+                        Absolutely. Many of our clients come to us with an existing website that's outdated or underperforming. We'll assess your current site, preserve any SEO value it has, and rebuild it with a modern design, faster performance, and better conversion elements. We handle all redirects so you don't lose your existing Google rankings during the transition.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Can you update our existing content or do you only write new pages?</span>
+                    <span>Will my website work well on mobile phones?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Both. In many cases, updating and expanding existing pages delivers faster results than creating new ones from scratch. If your site already has practice area pages or blog posts, we audit them first. Pages with some existing authority can often be improved and re-optimised to rank significantly higher. We will recommend the right mix of new content and updates based on what your site needs.
+                        Every website we build is mobile-first, meaning we design for phones and tablets before scaling up to desktops. Google uses mobile-first indexing, so your mobile experience directly affects your search rankings. We test across iPhones, Android devices, and tablets to make sure everything works perfectly.
                     </div>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Is content marketing worth it for a small firm outside Dublin?</span>
+                    <span>What platform do you build solicitor websites on?</span>
                     <span class="faq-arrow">&#9660;</span>
                 </div>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Absolutely. In fact, smaller firms outside Dublin often see results faster because there is less competition in local search. A solicitor in Galway, Limerick, or Waterford can dominate local search results with a well-planned content strategy, often outranking larger firms that have not invested in content. Location-specific pages and locally relevant blog posts are particularly effective for firms serving regional markets.
+                        We use WordPress for most solicitor websites because it gives us full control over SEO, speed, and functionality. WordPress powers over 40% of all websites globally and is well-supported, secure (when properly maintained), and flexible enough to grow with your firm. We don't use drag-and-drop website builders that produce bloated, slow code.
                     </div>
                 </div>
             </div>
@@ -498,9 +551,9 @@
 <!-- CTA Section -->
 <section class="section section-dark text-center">
     <div class="container">
-        <h2>Ready to Build Your Firm's Online Authority?</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--gray-300); font-size: 1.15rem;">Request a free content audit for your law firm. We will review your existing content, identify gaps, and show you exactly where the opportunities are to attract more clients through search.</p>
-        <a href="/#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Get Your Free Content Audit</a>
+        <h2>Ready for a Website That Works as Hard as You Do?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--gray-300); font-size: 1.15rem;">Get a free, no-obligation review of your current website. We'll show you what's working, what's not, and what a new site could do for your firm's client pipeline.</p>
+        <a href="/#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">Get Your Free Website Review</a>
     </div>
 </section>
 

@@ -1,22 +1,34 @@
+---
+permalink: /index.html
+title: "SEO for Solicitors in Ireland | Law Firm SEO Services | SolicitorDigital.ie"
+description: "Expert SEO for solicitors in Ireland. World-class legal SEO strategies from Juris Digital, now serving Irish law firms from Kinsale. Free SEO audit available."
+keywords: "seo for solicitors, solicitor seo, law firm seo ireland, attorney seo ireland, seo for law firms, legal seo ireland, solicitor marketing, digital marketing for solicitors"
+canonical: "https://solicitordigital.ie/"
+og_title: "SEO for Solicitors in Ireland | SolicitorDigital.ie"
+og_description: "World-class legal SEO expertise, now available to Irish solicitors. Get more clients through Google with proven strategies from the US legal SEO market."
+og_url: "https://solicitordigital.ie/"
+twitter_title: "SEO for Solicitors in Ireland | SolicitorDigital.ie"
+twitter_description: "World-class legal SEO expertise, now available to Irish solicitors. Get more clients through Google with proven strategies."
+---
 <!DOCTYPE html>
 <html lang="en-IE">
 <head>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="HrtVvRQCRTM9eVpPKCmYzw" async></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO for Solicitors in Ireland | Law Firm SEO Services | SolicitorDigital.ie</title>
-    <meta name="description" content="Expert SEO for solicitors in Ireland. World-class legal SEO strategies from Juris Digital, now serving Irish law firms from Kinsale. Free SEO audit available.">
-    <meta name="keywords" content="seo for solicitors, solicitor seo, law firm seo ireland, attorney seo ireland, seo for law firms, legal seo ireland, solicitor marketing, digital marketing for solicitors">
-    <link rel="canonical" href="https://solicitordigital.ie/">
-    <link rel="alternate" hreflang="en-IE" href="https://solicitordigital.ie/">
-    <meta property="og:title" content="SEO for Solicitors in Ireland | SolicitorDigital.ie">
-    <meta property="og:description" content="World-class legal SEO expertise, now available to Irish solicitors. Get more clients through Google with proven strategies from the US legal SEO market.">
-    <meta property="og:url" content="https://solicitordigital.ie/">
+    <title>{{ title | safe }}</title>
+    <meta name="description" content="{{ description | safe }}">
+    <meta name="keywords" content="{{ keywords | safe }}">
+    <link rel="canonical" href="{{ canonical | safe }}">
+    <link rel="alternate" hreflang="en-IE" href="{{ canonical | safe }}">
+    <meta property="og:title" content="{{ og_title | safe }}">
+    <meta property="og:description" content="{{ og_description | safe }}">
+    <meta property="og:url" content="{{ og_url | safe }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_IE">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SEO for Solicitors in Ireland | SolicitorDigital.ie">
-    <meta name="twitter:description" content="World-class legal SEO expertise, now available to Irish solicitors. Get more clients through Google with proven strategies.">
+    <meta name="twitter:title" content="{{ twitter_title | safe }}">
+    <meta name="twitter:description" content="{{ twitter_description | safe }}">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {

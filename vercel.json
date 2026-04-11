@@ -1,5 +1,7 @@
 {
   "cleanUrls": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "_site",
   "routes": [
     {
       "src": "/sem-for-attorneys/?",
