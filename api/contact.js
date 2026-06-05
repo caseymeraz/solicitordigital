@@ -66,6 +66,7 @@ module.exports = async (req, res) => {
     ["Phone", body.phone],
     ["Practice area", body["practice-area"]],
     ["Location", body.location],
+    ["Case value / budget", body.budget],
     ["Message", body.message],
   ].filter(([, v]) => v != null && String(v).trim() !== "");
 
@@ -99,7 +100,7 @@ module.exports = async (req, res) => {
         from: process.env.CONTACT_FROM || DEFAULT_FROM,
         to,
         reply_to: email,
-        subject: `New audit enquiry${body.firm ? ` — ${body.firm}` : ""} (${name})`,
+        subject: `New growth-plan enquiry${body.firm ? ` — ${body.firm}` : ""} (${name})`,
         text: textBody,
         html: htmlBody,
       }),
