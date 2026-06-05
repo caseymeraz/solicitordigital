@@ -67,6 +67,32 @@
         function acceptCookies() { localStorage.setItem('cookie_consent', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
         function declineCookies() { localStorage.setItem('cookie_consent', 'declined'); document.getElementById('cookie-banner').style.display = 'none'; }
         window.acceptCookies = acceptCookies; window.declineCookies = declineCookies;
+
+        // Contact / offer forms (homepage + per-service). Posts to /api/contact.
+        async function handleSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            var btn = form.querySelector('button[type="submit"]');
+            var original = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            var data = Object.fromEntries(new FormData(form).entries());
+            try {
+                var res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!res.ok) throw new Error('Request failed');
+                btn.textContent = 'Thank you, we will be in touch shortly.';
+                btn.style.background = 'var(--signal-deep)';
+            } catch (err) {
+                btn.textContent = 'Something went wrong, please try again';
+                btn.disabled = false;
+                setTimeout(function () { btn.textContent = original; }, 4000);
+            }
+        }
+        window.handleSubmit = handleSubmit;
     </script>
 
     <script defer src="/assets/whatsapp-widget.js"></script>

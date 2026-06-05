@@ -59,7 +59,21 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: "Please provide a valid email address." });
   }
 
+  // Which page/offer this came from (per-service forms send a hidden "service")
+  const SERVICE_LABELS = {
+    "seo-audit": "Free SEO Audit",
+    "ppc-review": "Free Google Ads Review",
+    "gbp-audit": "Free Google Business Profile Audit",
+    "content-plan": "Free Content Plan",
+    "website-review": "Free Website Review",
+    "growth-plan": "Free Growth Plan (digital marketing)",
+    "homepage": "Free Growth Plan (homepage)",
+  };
+  const serviceKey = String(body.service || "").trim();
+  const serviceLabel = SERVICE_LABELS[serviceKey] || serviceKey || "Free Growth Plan";
+
   const fields = [
+    ["Enquiry / offer", serviceLabel],
     ["Name", name],
     ["Firm", body.firm],
     ["Email", email],
@@ -73,7 +87,8 @@ module.exports = async (req, res) => {
 
   const textBody = fields.map(([label, v]) => `${label}: ${v}`).join("\n");
   const htmlBody = `
-    <h2>New audit enquiry from solicitordigital.ie</h2>
+    <h2>New enquiry from solicitordigital.ie</h2>
+    <p style="font-family:Arial,sans-serif;font-size:14px;"><strong>${escapeHtml(serviceLabel)}</strong></p>
     <table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">
       ${fields
         .map(
@@ -101,7 +116,7 @@ module.exports = async (req, res) => {
         from: process.env.CONTACT_FROM || DEFAULT_FROM,
         to,
         reply_to: email,
-        subject: `New growth plan enquiry${body.firm ? ` for ${body.firm}` : ""} (${name})`,
+        subject: `${serviceLabel} enquiry${body.firm ? ` for ${body.firm}` : ""} (${name})`,
         text: textBody,
         html: htmlBody,
       }),
