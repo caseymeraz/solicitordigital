@@ -1,5 +1,5 @@
 /* =========================================================================
-   SolicitorDigital.ie — Bold & Modern design system
+   SolicitorDigital.ie, Bold & Modern design system
    Single shared stylesheet (served at /assets/css/style.css)
    Type: Archivo (display) + Hanken Grotesk (body)
    Palette: navy ink · signal green · warm gold
@@ -348,7 +348,7 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .contact-section::before { content: ""; position: absolute; inset: 0; z-index: -1;
   background: radial-gradient(700px 500px at 90% 0%, rgba(0, 224, 160, 0.14), transparent 60%); }
 .contact-section h2 { color: #fff; }
-/* Elevated form panel — keeps the main form distinct from the footer */
+/* Elevated form panel: keeps the main form distinct from the footer */
 .contact-card {
   background: var(--ink-2); border: 1px solid var(--ink-line-2); border-radius: var(--radius-lg);
   padding: clamp(22px, 3.5vw, 38px); box-shadow: var(--shadow-2);

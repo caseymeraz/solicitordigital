@@ -101,7 +101,7 @@ module.exports = async (req, res) => {
         from: process.env.CONTACT_FROM || DEFAULT_FROM,
         to,
         reply_to: email,
-        subject: `New growth-plan enquiry${body.firm ? ` — ${body.firm}` : ""} (${name})`,
+        subject: `New growth plan enquiry${body.firm ? ` for ${body.firm}` : ""} (${name})`,
         text: textBody,
         html: htmlBody,
       }),

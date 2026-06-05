@@ -1,4 +1,4 @@
-/* Floating WhatsApp / Call widget — sitewide.
+/* Floating WhatsApp / Call widget, sitewide.
    Single source of truth: edit this file to change the number, copy, or styling.
    Number: 0873535028 (IE)  ->  +353 87 353 5028  ->  wa.me/353873535028 */
 (function () {
