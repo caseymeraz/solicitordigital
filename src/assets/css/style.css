@@ -502,6 +502,14 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .related-links a { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
 .related-links a:hover { color: #15ecae; }
 
+/* SERP screenshot figure + ranking explanation */
+.serp-figure { margin: 0; border: 1px solid var(--ink-line-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-2); background: var(--paper); }
+.serp-figure img { display: block; width: 100%; height: auto; }
+.serp-figure figcaption { padding: 11px 18px; font-size: 0.8rem; color: var(--text-soft); border-top: 1px solid var(--hairline); background: var(--paper-2); }
+.rank-list a { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.rank-list a:hover { color: #15ecae; }
+.rank-list li strong { color: #fff; }
+
 /* --------------------------------------------------------- Scroll reveal */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
