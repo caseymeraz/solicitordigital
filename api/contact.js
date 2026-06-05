@@ -66,7 +66,8 @@ module.exports = async (req, res) => {
     ["Phone", body.phone],
     ["Practice area", body["practice-area"]],
     ["Location", body.location],
-    ["Case value / budget", body.budget],
+    ["Budget / case value", body.budget],
+    ["Budget type", body["budget-type"]],
     ["Message", body.message],
   ].filter(([, v]) => v != null && String(v).trim() !== "");
 

@@ -348,6 +348,11 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .contact-section::before { content: ""; position: absolute; inset: 0; z-index: -1;
   background: radial-gradient(700px 500px at 90% 0%, rgba(0, 224, 160, 0.14), transparent 60%); }
 .contact-section h2 { color: #fff; }
+/* Elevated form panel — keeps the main form distinct from the footer */
+.contact-card {
+  background: var(--ink-2); border: 1px solid var(--ink-line-2); border-radius: var(--radius-lg);
+  padding: clamp(22px, 3.5vw, 38px); box-shadow: var(--shadow-2);
+}
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-group { display: flex; flex-direction: column; gap: 7px; }
 .form-group.full-width { grid-column: 1 / -1; }
@@ -373,7 +378,7 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .contact-detail a { color: var(--signal); }
 
 /* --------------------------------------------------------------------- Footer */
-.site-footer { background: #060e1a; color: var(--text-dim); padding: 64px 0 36px; border-top: 1px solid var(--ink-line); }
+.site-footer { background: #060e1a; color: var(--text-dim); padding: 64px 0 36px; border-top: 1px solid var(--ink-line-2); }
 .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--ink-line); }
 .footer-brand .logo { font-size: 1.3rem; margin-bottom: 14px; display: inline-block; }
 .footer-brand p { font-size: 0.9rem; color: var(--text-dim); max-width: 320px; }

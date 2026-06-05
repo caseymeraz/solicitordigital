@@ -511,7 +511,7 @@ twitter_description: "Full-service digital marketing for Irish law firms: SEO, G
                     <span class="eyebrow">Get started</span>
                     <h2>Get Your Free Growth Plan</h2>
                     <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">Tell us about your firm and your goals. We will come back with a plan built around your numbers and your budget &mdash; the cases you want, and the most cost-effective way to win them. No obligation, no pressure.</p>
-                    <form id="contact-form" onsubmit="handleSubmit(event)">
+                    <form id="contact-form" class="contact-card" onsubmit="handleSubmit(event)">
                         <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
                         <div class="form-grid">
                             <div class="form-group">
@@ -550,9 +550,18 @@ twitter_description: "Full-service digital marketing for Irish law firms: SEO, G
                                 <label for="location">Your Location</label>
                                 <input type="text" id="location" name="location" placeholder="Dublin, Cork, Galway...">
                             </div>
-                            <div class="form-group full-width">
-                                <label for="budget">Typical Case Value or Monthly Budget <span style="color:var(--text-dim); font-weight:400;">(optional)</span></label>
-                                <input type="text" id="budget" name="budget" placeholder="e.g. EUR 5,000 per case / EUR 2,000 per month">
+                            <div class="form-group">
+                                <label for="budget">Budget or Case Value <span style="color:var(--text-dim); font-weight:400;">(optional)</span></label>
+                                <input type="text" id="budget" name="budget" placeholder="e.g. EUR 2,000/mo or EUR 8,000 one-off">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget-type">Budget Type</label>
+                                <select id="budget-type" name="budget-type">
+                                    <option value="">Select...</option>
+                                    <option value="monthly">Monthly / ongoing retainer</option>
+                                    <option value="one-off">One-off project budget</option>
+                                    <option value="not-sure">Not sure yet</option>
+                                </select>
                             </div>
                             <div class="form-group full-width">
                                 <label for="message">Tell Us About Your Goals</label>
