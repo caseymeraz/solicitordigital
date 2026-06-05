@@ -309,7 +309,6 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
                 "description": "Expert SEO services for solicitors and law firms in Ireland. Operated by Ethical Digital Marketing Limited.",
                 "url": "https://solicitordigital.ie",
                 "telephone": "+353-21-206-3107",
-                "email": "hello@solicitordigital.ie",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Unit 2 Pier Rd, Dromderrig",
@@ -1150,6 +1149,8 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
                     <h2>Get Your Free SEO Audit</h2>
                     <p style="color:var(--gray-300); font-size:1.1rem; margin-bottom:32px;">Tell us about your practice and we will send you a comprehensive audit of your current online presence with actionable recommendations. No obligation, no pressure.</p>
                     <form id="contact-form" onsubmit="handleSubmit(event)">
+                        <!-- Honeypot: hidden from users, catches bots -->
+                        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
@@ -1216,7 +1217,7 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
                         <span class="icon">&#x2709;</span>
                         <div>
                             <p><strong style="color:var(--white);">Email</strong></p>
-                            <p><a href="mailto:hello@solicitordigital.ie">hello@solicitordigital.ie</a></p>
+                            <p>Use the enquiry form and we will reply by email within one working day.</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1255,7 +1256,7 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
             <p style="color:var(--gray-600); margin-bottom:24px;">Last updated: 14 March 2026</p>
 
             <h3>Data Controller</h3>
-            <p>Ethical Digital Marketing Limited, Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124, Ireland. Phone: (021) 206 3107. Email: hello@solicitordigital.ie.</p>
+            <p>Ethical Digital Marketing Limited, Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124, Ireland. Phone: (021) 206 3107.</p>
 
             <h3>What Data We Collect</h3>
             <p>When you submit our contact form, we collect the information you provide: your name, email address, phone number, firm name, practice area, location, and message. We also use cookies to store your cookie consent preference.</p>
@@ -1279,7 +1280,7 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
                 <li>Data portability</li>
                 <li>Object to processing</li>
             </ul>
-            <p>To exercise any of these rights, email us at <a href="mailto:hello@solicitordigital.ie">hello@solicitordigital.ie</a>.</p>
+            <p>To exercise any of these rights, contact us using the <a href="#contact" style="text-decoration:underline;">enquiry form</a> on this site or by phone on (021) 206 3107.</p>
 
             <h3>Cookies</h3>
             <p>This site uses a single cookie (stored in your browser's localStorage) to remember your cookie consent preference. We do not use tracking or advertising cookies.</p>
@@ -1334,13 +1335,32 @@ twitter_description: "World-class legal SEO expertise, now available to Irish so
             }
         }
 
-        // Form handling (UI only)
-        function handleSubmit(e) {
+        // Form handling: POST to the /api/contact serverless function
+        async function handleSubmit(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            btn.textContent = 'Thank You! We Will Be in Touch Shortly.';
-            btn.style.background = 'var(--green-dark)';
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.textContent;
+            btn.textContent = 'Sending...';
             btn.disabled = true;
+
+            const data = Object.fromEntries(new FormData(form).entries());
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!res.ok) throw new Error('Request failed');
+                btn.textContent = 'Thank You! We Will Be in Touch Shortly.';
+                btn.style.background = 'var(--green-dark)';
+            } catch (err) {
+                btn.textContent = 'Something went wrong — please try again';
+                btn.style.background = '';
+                btn.disabled = false;
+                setTimeout(function () { btn.textContent = original; }, 4000);
+            }
         }
 
         // Smooth scroll for anchor links
