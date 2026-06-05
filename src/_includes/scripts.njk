@@ -1,0 +1,72 @@
+    <!-- Cookie consent -->
+    <div id="cookie-banner">
+        <div class="cookie-inner">
+            <p>This site uses a single cookie to remember your preference. See our <a href="/privacy">Privacy Policy</a>.</p>
+            <div class="cookie-btns">
+                <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header shadow on scroll
+        var header = document.getElementById('header');
+        if (header) {
+            window.addEventListener('scroll', function () {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }, { passive: true });
+        }
+
+        // Mobile nav toggle
+        var mt = document.getElementById('mobile-toggle');
+        var nav = document.getElementById('nav');
+        if (mt && nav) {
+            mt.addEventListener('click', function () {
+                var open = nav.classList.toggle('open');
+                mt.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            nav.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () { nav.classList.remove('open'); mt.setAttribute('aria-expanded', 'false'); });
+            });
+        }
+
+        // FAQ accordion
+        function toggleFaq(el) {
+            var item = el.parentElement;
+            var answer = item.querySelector('.faq-answer');
+            var isOpen = item.classList.contains('open');
+            item.parentElement.querySelectorAll('.faq-item.open').forEach(function (o) {
+                o.classList.remove('open');
+                o.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+        }
+        window.toggleFaq = toggleFaq;
+
+        // Scroll reveal
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window) || !els.length) {
+                els.forEach(function (e) { e.classList.add('in'); }); return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+            els.forEach(function (e) { io.observe(e); });
+        })();
+
+        // Cookie consent
+        (function () {
+            if (!localStorage.getItem('cookie_consent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        })();
+        function acceptCookies() { localStorage.setItem('cookie_consent', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
+        function declineCookies() { localStorage.setItem('cookie_consent', 'declined'); document.getElementById('cookie-banner').style.display = 'none'; }
+        window.acceptCookies = acceptCookies; window.declineCookies = declineCookies;
+    </script>
+
+    <script defer src="/assets/whatsapp-widget.js"></script>

@@ -114,3 +114,33 @@ content:
       - { name: og_url, label: OG URL, type: string }
       - { name: twitter_title, label: Twitter title, type: string }
       - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: privacy
+    label: Privacy Policy
+    type: file
+    path: src/privacy.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
+  - name: terms
+    label: Terms of Use
+    type: file
+    path: src/terms.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }

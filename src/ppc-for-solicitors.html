@@ -13,242 +13,8 @@ twitter_description: "PPC and Google Ads management for solicitors in Ireland. G
 <!DOCTYPE html>
 <html lang="en-IE">
 <head>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="HrtVvRQCRTM9eVpPKCmYzw" async></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title | safe }}</title>
-    <meta name="description" content="{{ description | safe }}">
-    <meta name="keywords" content="{{ keywords | safe }}">
-    <link rel="canonical" href="{{ canonical | safe }}">
-    <link rel="alternate" hreflang="en-IE" href="{{ canonical | safe }}">
-    <meta property="og:title" content="{{ og_title | safe }}">
-    <meta property="og:description" content="{{ og_description | safe }}">
-    <meta property="og:url" content="{{ og_url | safe }}">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_IE">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ twitter_title | safe }}">
-    <meta name="twitter:description" content="{{ twitter_description | safe }}">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --navy: #0a1628;
-            --navy-light: #132038;
-            --navy-mid: #1a2d4a;
-            --green: #00a67e;
-            --green-dark: #008f6b;
-            --green-light: #00c896;
-            --white: #ffffff;
-            --gray-50: #f8f9fa;
-            --gray-100: #f0f2f5;
-            --gray-200: #e2e6ea;
-            --gray-300: #c8cfd8;
-            --gray-600: #5a6578;
-            --gray-700: #3d4654;
-            --gold: #d4a843;
-            --max-width: 1140px;
-        }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--gray-700);
-            line-height: 1.7;
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-        h1, h2, h3, h4 { color: var(--navy); line-height: 1.3; font-weight: 700; }
-        h1 { font-size: 2.75rem; }
-        h2 { font-size: 2rem; margin-bottom: 1rem; }
-        h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
-        p { margin-bottom: 1rem; }
-        a { color: var(--green); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: var(--green-dark); }
-        .btn {
-            display: inline-block; padding: 14px 32px; border-radius: 6px;
-            font-weight: 600; font-size: 1rem; cursor: pointer;
-            transition: all 0.25s ease; border: none; text-align: center;
-        }
-        .btn-primary {
-            background: var(--green); color: var(--white);
-        }
-        .btn-primary:hover { background: var(--green-dark); color: var(--white); transform: translateY(-1px); }
-        .btn-outline {
-            background: transparent; color: var(--white);
-            border: 2px solid var(--white);
-        }
-        .btn-outline:hover { background: var(--white); color: var(--navy); }
-        .section { padding: 80px 0; }
-        .section-alt { background: var(--gray-50); }
-        .section-dark { background: var(--navy); color: var(--gray-200); }
-        .section-dark h2, .section-dark h3 { color: var(--white); }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    {% include "head.njk" %}
 
-        /* Header */
-        .site-header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            transition: box-shadow 0.3s;
-        }
-        .site-header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-        .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 24px; max-width: var(--max-width); margin: 0 auto;
-        }
-        .logo { font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
-        .logo span { color: var(--green); }
-        nav { display: flex; align-items: center; gap: 28px; }
-        nav a { color: var(--gray-300); font-size: 0.9rem; font-weight: 500; }
-        nav a:hover { color: var(--white); }
-        .nav-cta { padding: 10px 22px; font-size: 0.85rem; }
-        .mobile-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
-
-        /* Dropdown */
-        .nav-dropdown { position: relative; }
-        .nav-dropdown > a { cursor: pointer; }
-        .nav-dropdown-menu {
-            display: none; position: absolute; top: calc(100% + 12px); left: -12px;
-            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px; padding: 8px 0; min-width: 220px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3); z-index: 100;
-        }
-        .nav-dropdown-menu::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
-        .nav-dropdown > a { padding-bottom: 12px; }
-        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
-        .nav-dropdown-menu a {
-            display: block; padding: 10px 20px; color: var(--gray-300);
-            font-size: 0.85rem; white-space: nowrap;
-        }
-        .nav-dropdown-menu a:hover { background: rgba(0,166,126,0.1); color: var(--green); }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-            padding: 160px 0 100px; color: var(--white); position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: -50%; right: -20%;
-            width: 800px; height: 800px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(0,166,126,0.08) 0%, transparent 70%);
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 720px; }
-        .hero h1 { margin-bottom: 1.25rem; color: var(--white); }
-        .hero h1 .highlight { color: var(--green); }
-        .hero p { font-size: 1.2rem; color: var(--gray-300); margin-bottom: 2rem; max-width: 600px; }
-        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 3rem; }
-        .trust-bar { display: flex; gap: 48px; flex-wrap: wrap; }
-        .trust-item { text-align: center; }
-        .trust-number { display: block; font-size: 2rem; font-weight: 700; color: var(--green); line-height: 1.2; }
-        .trust-label { font-size: 0.85rem; color: var(--gray-300); }
-
-        /* Service Cards */
-        .service-card {
-            background: var(--white); border: 1px solid var(--gray-200);
-            border-radius: 10px; padding: 32px; transition: all 0.3s;
-        }
-        .service-card:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-        .service-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
-        .service-card h3 { font-size: 1.15rem; }
-        .service-card p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 0; }
-
-        /* Practice Areas */
-        .practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .practice-item {
-            background: var(--navy-light); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 8px; padding: 24px; text-align: center;
-            transition: all 0.3s;
-        }
-        .practice-item:hover { border-color: var(--green); transform: translateY(-2px); }
-        .practice-item h3 { font-size: 1rem; color: var(--white); margin-bottom: 8px; }
-        .practice-item p { font-size: 0.85rem; color: var(--gray-300); margin-bottom: 0; }
-        .practice-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
-
-        /* Process Steps */
-        .process-step {
-            display: flex; gap: 24px; align-items: flex-start;
-            padding: 28px 0; border-bottom: 1px solid var(--gray-200);
-        }
-        .process-step:last-child { border-bottom: none; }
-        .step-number {
-            flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
-            background: var(--green); color: var(--white); display: flex;
-            align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;
-        }
-        .step-content h3 { margin-bottom: 6px; }
-        .step-content p { margin-bottom: 0; color: var(--gray-600); }
-
-        /* Results */
-        .result-card {
-            background: var(--navy-light); border-radius: 10px; padding: 36px;
-            text-align: center; border: 1px solid rgba(255,255,255,0.06);
-        }
-        .result-number { font-size: 2.5rem; font-weight: 700; color: var(--green); display: block; line-height: 1.1; }
-        .result-label { font-size: 0.95rem; color: var(--gray-300); margin-top: 8px; display: block; }
-
-        /* FAQ */
-        .faq-item { border-bottom: 1px solid var(--gray-200); }
-        .faq-question {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 0; cursor: pointer; font-weight: 600; font-size: 1.05rem;
-            color: var(--navy); gap: 16px;
-        }
-        .faq-question:hover { color: var(--green); }
-        .faq-arrow { flex-shrink: 0; transition: transform 0.3s; font-size: 0.85rem; color: var(--green); }
-        .faq-item.open .faq-arrow { transform: rotate(180deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-        .faq-answer-inner { padding: 0 0 20px; color: var(--gray-600); line-height: 1.8; }
-
-        /* Footer */
-        .site-footer {
-            background: #060e1a; color: var(--gray-600); padding: 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        .footer-links a { color: var(--gray-600); font-size: 0.85rem; }
-        .footer-links a:hover { color: var(--green); }
-        .footer-company { font-size: 0.85rem; }
-
-        /* Utility */
-        .text-green { color: var(--green); }
-        .text-center { text-align: center; }
-        .mb-4 { margin-bottom: 2rem; }
-        .mb-6 { margin-bottom: 3rem; }
-        .mt-4 { margin-top: 2rem; }
-        .mt-6 { margin-top: 3rem; }
-        .section-intro { max-width: 680px; margin: 0 auto 3rem; text-align: center; color: var(--gray-600); font-size: 1.1rem; }
-        .check-list { list-style: none; padding: 0; }
-        .check-list li { padding: 6px 0 6px 28px; position: relative; }
-        .check-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(0,166,126,0.08), rgba(0,166,126,0.03));
-            border-left: 4px solid var(--green); padding: 24px 28px; border-radius: 0 8px 8px 0;
-            margin: 24px 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr 1fr; }
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.7rem; }
-        }
-        @media (max-width: 640px) {
-            .grid-2, .grid-3, .grid-4, .practice-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.5rem; }
-            .hero { padding: 130px 0 70px; }
-            .section { padding: 60px 0; }
-            .trust-bar { gap: 32px; }
-            nav { display: none; }
-            nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
-            nav.open .nav-dropdown-menu { display: block; position: static; background: none; border: none; box-shadow: none; padding: 0 0 0 12px; margin: 0; min-width: 0; }
-            .mobile-toggle { display: block; }
-            .header-inner { padding: 12px 24px; }
-        }
-    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -270,28 +36,7 @@ twitter_description: "PPC and Google Ads management for solicitors in Ireland. G
 </head>
 <body>
 
-<header class="site-header" id="header">
-    <div class="header-inner">
-        <a href="/" class="logo">Solicitor<span>Digital</span>.ie</a>
-        <button class="mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
-        <nav>
-            <div class="nav-dropdown">
-                <a href="/digital-marketing-for-solicitors">Services &#9662;</a>
-                <div class="nav-dropdown-menu">
-                    <a href="/seo-for-solicitors">SEO for Solicitors</a>
-                    <a href="/website-design-for-solicitors">Website Design</a>
-                    <a href="/digital-marketing-for-solicitors">Digital Marketing</a>
-                    <a href="/ppc-for-solicitors">PPC / Google Ads</a>
-                    <a href="/local-seo-for-solicitors">Local SEO</a>
-                    <a href="/content-marketing-for-solicitors">Content Marketing</a>
-                </div>
-            </div>
-            <a href="/#plan">How It Works</a>
-            <a href="/#services">Services</a>
-            <a href="/#contact" class="btn btn-primary nav-cta">Free Growth Plan</a>
-        </nav>
-    </div>
-</header>
+{% include "header.njk" %}
 
 <!-- Hero -->
 <section class="hero">
@@ -401,22 +146,22 @@ twitter_description: "PPC and Google Ads management for solicitors in Ireland. G
         <p class="section-intro">Each area of law has different search volumes, competition levels, and cost-per-click rates. We build campaigns tailored to the specific dynamics of your practice areas.</p>
         <div class="grid-4">
             <div class="service-card">
-                <span class="service-icon">&#9878;</span>
+                <span class="icon-chip"><svg class="icon"><use href="#i-criminal"/></svg></span>
                 <h3>Personal Injury</h3>
                 <p>The most competitive legal PPC category in Ireland. High cost-per-click, but also the highest case values. We target specific injury types and locations to maximise return on every euro spent.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">&#128106;</span>
+                <span class="icon-chip"><svg class="icon"><use href="#i-family"/></svg></span>
                 <h3>Family Law</h3>
                 <p>Searchers dealing with divorce, custody, or separation are under pressure and need help quickly. We run campaigns targeting these sensitive terms with empathetic, trust-building ad copy.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">&#127968;</span>
+                <span class="icon-chip"><svg class="icon"><use href="#i-property"/></svg></span>
                 <h3>Conveyancing</h3>
                 <p>Property buyers and sellers search locally. We run geo-targeted campaigns across Dublin, Cork, Galway, Waterford, and beyond, focusing on "conveyancing solicitor" plus location terms.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">&#9881;</span>
+                <span class="icon-chip"><svg class="icon"><use href="#i-technical"/></svg></span>
                 <h3>Employment Law</h3>
                 <p>Both employees facing unfair dismissal and employers needing HR legal advice search Google. We segment campaigns to target each audience separately with the right messaging.</p>
             </div>
@@ -537,83 +282,8 @@ twitter_description: "PPC and Google Ads management for solicitors in Ireland. G
     </div>
 </section>
 
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-inner">
-            <div class="footer-company">
-                <p>&copy; 2025 SolicitorDigital.ie is a trading name of Ethical Digital Marketing Limited. Unit 2 Pier Rd, Dromderrig, Kinsale, Co. Cork, P17 V124. Phone: <a href="tel:+353212063107">(021) 206 3107</a>.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/seo-for-solicitors">SEO</a>
-                <a href="/website-design-for-solicitors">Web Design</a>
-                <a href="/ppc-for-solicitors">PPC</a>
-                <a href="/local-seo-for-solicitors">Local SEO</a>
-                <a href="/#contact">Contact</a>
-                <a href="/#privacy">Privacy</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script>
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    function toggleFaq(el) {
-        const item = el.parentElement;
-        const answer = item.querySelector('.faq-answer');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(openItem => {
-            openItem.classList.remove('open');
-            openItem.querySelector('.faq-answer').style.maxHeight = null;
-        });
-        if (!isOpen) {
-            item.classList.add('open');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offset = 80;
-                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top, behavior: 'smooth' });
-            }
-            document.querySelector('nav').classList.remove('open');
-        });
-    });
-</script>
-
-<div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:var(--navy); border-top:1px solid rgba(255,255,255,0.1); padding:16px 24px;">
-    <div style="max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-        <p style="color:var(--gray-300); margin:0; font-size:0.9rem; flex:1; min-width:250px;">This site uses cookies to remember your preferences. See our <a href="/#privacy" style="text-decoration:underline;">Privacy Policy</a> for details.</p>
-        <div style="display:flex; gap:10px;">
-            <button onclick="acceptCookies()" style="padding:10px 24px; background:var(--green); color:var(--white); border:none; border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Accept</button>
-            <button onclick="declineCookies()" style="padding:10px 24px; background:transparent; color:var(--gray-300); border:1px solid var(--gray-600); border-radius:6px; font-weight:600; cursor:pointer; font-size:0.9rem;">Decline</button>
-        </div>
-    </div>
-</div>
-<script>
-    (function() {
-        if (!localStorage.getItem('cookie_consent')) {
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
-    })();
-    function acceptCookies() {
-        localStorage.setItem('cookie_consent', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-    function declineCookies() {
-        localStorage.setItem('cookie_consent', 'declined');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-</script>
-
-    <script defer src="/assets/whatsapp-widget.js"></script>
+{% include "footer.njk" %}
+{% include "icons.njk" %}
+{% include "scripts.njk" %}
 </body>
 </html>
