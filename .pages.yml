@@ -115,6 +115,22 @@ content:
       - { name: twitter_title, label: Twitter title, type: string }
       - { name: twitter_description, label: Twitter description, type: text }
 
+  - name: pricing
+    label: Pricing
+    type: file
+    path: src/pricing.html
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Meta title, type: string }
+      - { name: description, label: Meta description, type: text }
+      - { name: keywords, label: Meta keywords, type: text }
+      - { name: canonical, label: Canonical URL, type: string }
+      - { name: og_title, label: "OG title (social share)", type: string }
+      - { name: og_description, label: "OG description (social share)", type: text }
+      - { name: og_url, label: OG URL, type: string }
+      - { name: twitter_title, label: Twitter title, type: string }
+      - { name: twitter_description, label: Twitter description, type: text }
+
   - name: privacy
     label: Privacy Policy
     type: file
