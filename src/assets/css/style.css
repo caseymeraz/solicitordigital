@@ -522,6 +522,16 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .cta-band .cta-phone { display: block; margin-top: 14px; font-size: 0.9rem; color: var(--text-dim); }
 .cta-band .cta-phone a { color: var(--signal); }
 
+/* AI answer (chat-style) evidence panel */
+.ai-chat { background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); box-shadow: var(--shadow-2); padding: clamp(22px, 3vw, 30px); }
+.ai-chat-head { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 14px; }
+.ai-chat-head .icon-chip { width: 34px; height: 34px; font-size: 17px; margin: 0; border-radius: 9px; }
+.ai-q { background: var(--ink); color: #fff; border-radius: 14px 14px 14px 4px; padding: 11px 15px; font-weight: 600; font-size: 0.95rem; margin: 0 0 14px; }
+.ai-a-intro { font-size: 0.92rem; color: var(--text-soft); margin: 0 0 10px; }
+.ai-firms { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.ai-firms li { padding: 9px 14px; background: var(--paper-2); border: 1px solid var(--hairline); border-radius: 9px; font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.ai-source { font-size: 0.78rem; color: var(--text-soft); margin: 14px 0 0; }
+
 /* SERP screenshot figure + ranking explanation */
 .serp-figure { margin: 0; border: 1px solid var(--ink-line-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-2); background: var(--paper); }
 .serp-figure img { display: block; width: 100%; height: auto; }

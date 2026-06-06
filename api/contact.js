@@ -67,6 +67,7 @@ module.exports = async (req, res) => {
     "content-gap": "Free Content Gap Report",
     "website-teardown": "Free Website Teardown",
     "growth-plan": "Free Growth Plan (digital marketing)",
+    "ai-visibility": "Free AI Visibility Report",
     "pricing-quote": "Free Growth Plan / tailored quote (pricing page)",
     "homepage": "Free Growth Plan (homepage)",
     // legacy values, kept so older cached pages still label correctly
