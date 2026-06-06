@@ -502,6 +502,12 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 .related-links a { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
 .related-links a:hover { color: #15ecae; }
 
+/* In-context (in-prose) internal links */
+.ilink { color: var(--signal-deep); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.ilink:hover { color: var(--signal); }
+.section-dark .ilink, .hero .ilink, .contact-section .ilink { color: var(--signal); }
+.section-dark .ilink:hover, .hero .ilink:hover { color: #15ecae; }
+
 /* Inline CTA band */
 .cta-band {
   max-width: 940px; margin: 0 auto; text-align: center; position: relative; isolation: isolate; overflow: hidden;
