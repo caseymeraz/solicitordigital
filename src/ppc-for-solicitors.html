@@ -104,7 +104,7 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
                 <h1>Google Ads for Solicitors <span class="highlight">in Ireland</span></h1>
                 <p>When someone needs a solicitor now, they Google it. In Irish legal search hardly any firms run Google Ads, so the paid slots at the very top are wide open and cheap. That makes paid search a fast, low cost way to win enquiries straight away for the right commercial terms, alongside your map pack and organic presence. We run it tracked on real enquiries and kept inside the LSRA advertising rules.</p>
                 <div class="hero-buttons">
-                    <a href="#review" class="btn btn-primary">Get your free Google Ads review <svg class="icon"><use href="#i-arrow"/></svg></a>
+                    <a href="#contact" class="btn btn-primary">Get your free Google Ads review <svg class="icon"><use href="#i-arrow"/></svg></a>
                     <a href="#what" class="btn btn-outline">What Google Ads involves</a>
                 </div>
                 <div class="trust-bar">
@@ -256,6 +256,18 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
         </div>
     </section>
 
+    <!-- Inline CTA -->
+    <section class="section" style="padding-top:clamp(24px,3vw,40px); padding-bottom:clamp(24px,3vw,40px);">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h3>Curious what the top spot would cost?</h3>
+                <p>The ad space above the map is wide open in Irish legal search. We will show you what it takes to own it.</p>
+                <a href="#contact" class="btn btn-primary">Get your free opportunity report <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <span class="cta-phone">Prefer to talk? Call <a href="tel:+353212063107">(021) 206 3107</a></span>
+            </div>
+        </div>
+    </section>
+
 <!-- The plan -->
     <section class="section section-alt" id="plan">
         <div class="container">
@@ -369,6 +381,18 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
         </div>
     </section>
 
+    <!-- Inline CTA -->
+    <section class="section" style="padding-top:clamp(24px,3vw,40px); padding-bottom:clamp(24px,3vw,40px);">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h3>Want enquiries this week?</h3>
+                <p>Get your free Google Ads opportunity report for your practice areas, no obligation.</p>
+                <a href="#contact" class="btn btn-primary">Get your free opportunity report <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <span class="cta-phone">Prefer to talk? Call <a href="tel:+353212063107">(021) 206 3107</a></span>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section section-alt" id="faq">
         <div class="container">
@@ -390,15 +414,15 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
     </section>
 
     <!-- Offer / form -->
-    <section class="section contact-section" id="review">
+    <section class="section contact-section" id="contact">
         <div class="container">
             <div class="grid-2" style="gap:clamp(40px,5vw,72px);">
                 <div>
-                    <span class="eyebrow">Free Google Ads review</span>
-                    <h2>See exactly where your campaign stands</h2>
-                    <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">Tell us about your firm and we will send you a free Google Ads review: where your budget is leaking, your Quality Score and tracking, your keywords and negatives, your ads and landing pages, and the quickest wins. No obligation, no pressure.</p>
+                    <span class="eyebrow">Free Google Ads opportunity report</span>
+                    <h2>See what the top spot would cost you</h2>
+                    <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">In Irish legal search hardly any firms run Google Ads, so the top of the page is wide open. Tell us your practice areas and your city and we will send you the searches worth bidding on, the likely cost per click and per enquiry, and what it would take to own that space. No obligation, no pressure.</p>
                     <form id="contact-form" class="contact-card" onsubmit="handleSubmit(event)">
-                        <input type="hidden" name="service" value="ppc-review">
+                        <input type="hidden" name="service" value="ads-opportunity">
                         <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
                         <div class="form-grid">
                             <div class="form-group">
@@ -418,12 +442,21 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
                                 <input type="tel" id="phone" name="phone" placeholder="+353 1 234 5678">
                             </div>
                             <div class="form-group full-width">
-                                <label for="website">Your Website</label>
-                                <input type="text" id="website" name="website" placeholder="www.yourfirm.ie">
+                                <label for="location">Your Town or City</label>
+                                <input type="text" id="location" name="location" placeholder="e.g. Cork">
                             </div>
                             <div class="form-group full-width">
-                                <label for="message">What practice areas and locations do you want more clients for?</label>
-                                <textarea id="message" name="message" placeholder="e.g. conveyancing and probate in Cork, family law in Dublin..."></textarea>
+                                <label for="runs-ads">Do you run Google Ads now?</label>
+                                <select id="runs-ads" name="runs-ads">
+                                    <option value="">Select...</option>
+                                    <option value="Not yet">Not yet</option>
+                                    <option value="Yes, already running ads">Yes, already running ads</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Which practice areas do you want more clients for?</label>
+                                <textarea id="message" name="message" placeholder="e.g. conveyancing and probate, family law..."></textarea>
                             </div>
                         </div>
                         <div class="form-group full-width" style="margin-top:14px;">
@@ -433,19 +466,18 @@ twitter_description: "PPC and Google Ads for Irish solicitors, kept LSRA complia
                             </label>
                         </div>
                         <div class="form-submit">
-                            <button type="submit" class="btn btn-primary" style="width:100%; padding:17px;">Send Me My Free Google Ads Review</button>
+                            <button type="submit" class="btn btn-primary" style="width:100%; padding:17px;">Send Me My Free Opportunity Report</button>
                         </div>
                     </form>
                 </div>
                 <div class="contact-info">
-                    <h3>What your review covers</h3>
+                    <h3>What your report shows</h3>
                     <ul class="check-list">
-                        <li>Where your budget is being wasted on the wrong clicks</li>
-                        <li>Your Quality Score and the cost per click it is driving</li>
-                        <li>Your keyword coverage and missing negative keywords</li>
-                        <li>Whether your ad copy and landing pages actually match</li>
-                        <li>Whether conversion and call tracking is set up correctly</li>
-                        <li>Whether the campaign is compliant with the LSRA rules</li>
+                        <li>The searches worth bidding on in your area</li>
+                        <li>The likely cost per click and per enquiry</li>
+                        <li>How much of the top of the page is currently uncontested</li>
+                        <li>A sensible starting budget for your goals</li>
+                        <li>How we keep every campaign inside the LSRA rules</li>
                     </ul>
                     <div style="margin-top:30px; padding-top:28px; border-top:1px solid var(--ink-line);">
                         <h3 style="margin-bottom:12px;">Prefer to talk?</h3>

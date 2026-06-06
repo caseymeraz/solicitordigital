@@ -190,12 +190,67 @@ twitter_description: "Clear, itemised pricing for Irish law firms. New to market
         </div>
     </section>
 
-    <section class="section section-dark text-center">
+    <section class="section contact-section" id="contact">
         <div class="container">
-            <span class="eyebrow">Get started</span>
-            <h2 class="mb-4">Not sure where to start?</h2>
-            <p class="section-intro">Tell us your goals and what a case is worth to you. We'll come back with a free growth plan and a clear quote built around your firm, no obligation.</p>
-            <a href="/#contact" class="btn btn-primary">Get Your Free Growth Plan <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <div class="grid-2" style="gap:clamp(40px,5vw,72px);">
+                <div>
+                    <span class="eyebrow">Get started</span>
+                    <h2>Not sure where to start?</h2>
+                    <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">Tell us your goals and what a case is worth to you, and we will come back with a free growth plan and a clear quote built around your firm, using these prices as the starting point. No obligation, no pressure.</p>
+                    <form id="contact-form" class="contact-card" onsubmit="handleSubmit(event)">
+                        <input type="hidden" name="service" value="pricing-quote">
+                        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John O'Sullivan">
+                            </div>
+                            <div class="form-group">
+                                <label for="firm">Firm Name</label>
+                                <input type="text" id="firm" name="firm" placeholder="O'Sullivan &amp; Partners">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.ie">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+353 1 234 5678">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">What are you interested in, and what is a new client worth to you?</label>
+                                <textarea id="message" name="message" placeholder="e.g. a new website plus SEO, or just local SEO to start. Typical case value if you know it..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group full-width" style="margin-top:14px;">
+                            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:0.9rem; color:var(--text-dim-2); font-weight:400;">
+                                <input type="checkbox" id="consent" name="consent" required style="margin-top:4px; min-width:18px; min-height:18px; accent-color:var(--signal);">
+                                <span>I consent to Ethical Digital Marketing Limited processing my data to respond to this enquiry. See our <a href="/privacy" style="color:var(--signal); text-decoration:underline;">Privacy Policy</a>.</span>
+                            </label>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary" style="width:100%; padding:17px;">Send Me My Free Growth Plan</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>What you get</h3>
+                    <ul class="check-list">
+                        <li>A clear quote built around your goals and budget, not a fixed package</li>
+                        <li>The right mix of services for the cases you want</li>
+                        <li>What a new client should cost you to win</li>
+                        <li>Honest advice on where to start and what can wait</li>
+                        <li>No cost, no obligation, no sales pressure</li>
+                    </ul>
+                    <div style="margin-top:30px; padding-top:28px; border-top:1px solid var(--ink-line);">
+                        <h3 style="margin-bottom:12px;">Prefer to talk?</h3>
+                        <div class="contact-detail">
+                            <span><svg class="icon"><use href="#i-phone"/></svg></span>
+                            <div><p><strong style="color:#fff;">Phone</strong></p><p><a href="tel:+353212063107">(021) 206 3107</a></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

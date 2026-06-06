@@ -104,7 +104,7 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
                 <h1>Website Design for Solicitors <span class="highlight">in Ireland</span></h1>
                 <p>A potential client judges your firm by your website before they ever pick up the phone. If it looks dated, loads slowly or does not work on a mobile, they click back and call the firm next door. We build solicitor websites that earn trust, load fast and turn visitors into enquiries, and we keep every page inside the LSRA advertising rules.</p>
                 <div class="hero-buttons">
-                    <a href="#review" class="btn btn-primary">Get your free website review <svg class="icon"><use href="#i-arrow"/></svg></a>
+                    <a href="#contact" class="btn btn-primary">Get your free website review <svg class="icon"><use href="#i-arrow"/></svg></a>
                     <a href="#what" class="btn btn-outline">What we build for solicitors</a>
                 </div>
                 <div class="trust-bar">
@@ -231,6 +231,18 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
                     <h3>Content management you control</h3>
                     <p>We build on a content management system, usually WordPress, so your team can update text, add a new solicitor or publish an article without writing a line of code. You stay in control of your own site, and we are here when you want a hand.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline CTA -->
+    <section class="section" style="padding-top:clamp(24px,3vw,40px); padding-bottom:clamp(24px,3vw,40px);">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h3>Wondering why your site is not converting?</h3>
+                <p>Send us your website and we will record a short video walking through it, with the top fixes.</p>
+                <a href="#contact" class="btn btn-primary">Get your free website teardown <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <span class="cta-phone">Prefer to talk? Call <a href="tel:+353212063107">(021) 206 3107</a></span>
             </div>
         </div>
     </section>
@@ -377,6 +389,18 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
         </div>
     </section>
 
+    <!-- Inline CTA -->
+    <section class="section" style="padding-top:clamp(24px,3vw,40px); padding-bottom:clamp(24px,3vw,40px);">
+        <div class="container">
+            <div class="cta-band reveal">
+                <h3>Want a website that earns enquiries?</h3>
+                <p>Get your free website teardown video, no obligation.</p>
+                <a href="#contact" class="btn btn-primary">Get your free website teardown <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <span class="cta-phone">Prefer to talk? Call <a href="tel:+353212063107">(021) 206 3107</a></span>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section" id="faq">
         <div class="container">
@@ -398,15 +422,15 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
     </section>
 
     <!-- Offer / form -->
-    <section class="section contact-section" id="review">
+    <section class="section contact-section" id="contact">
         <div class="container">
             <div class="grid-2" style="gap:clamp(40px,5vw,72px);">
                 <div>
-                    <span class="eyebrow">Free website review</span>
-                    <h2>See how your website is really performing</h2>
-                    <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">Tell us about your firm and we will send you a free website review: the first impression your site gives, how it performs on mobile and for speed, whether it is set up to convert visitors into enquiries, and the quickest wins. No obligation, no pressure. For costs, see our <a href="/pricing">pricing page</a>, where the website design and build line item lives.</p>
+                    <span class="eyebrow">Free website teardown</span>
+                    <h2>A short video review of your site</h2>
+                    <p style="color:var(--text-dim-2); font-size:1.08rem; margin:16px 0 30px;">Send us your website and we will record a short, personal video walking through it: the first impression, how fast it loads, how it feels on a phone, and whether it actually turns visitors into enquiries, with the top fixes. No obligation, no pressure.</p>
                     <form id="contact-form" class="contact-card" onsubmit="handleSubmit(event)">
-                        <input type="hidden" name="service" value="website-review">
+                        <input type="hidden" name="service" value="website-teardown">
                         <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
                         <div class="form-grid">
                             <div class="form-group">
@@ -426,11 +450,11 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
                                 <input type="tel" id="phone" name="phone" placeholder="+353 1 234 5678">
                             </div>
                             <div class="form-group full-width">
-                                <label for="website">Your Website</label>
-                                <input type="text" id="website" name="website" placeholder="www.yourfirm.ie">
+                                <label for="website">Your Website *</label>
+                                <input type="text" id="website" name="website" required placeholder="www.yourfirm.ie">
                             </div>
                             <div class="form-group full-width">
-                                <label for="message">What would you like your website to do better?</label>
+                                <label for="message">Anything specific you want us to look at?</label>
                                 <textarea id="message" name="message" placeholder="e.g. we need a faster, mobile friendly site that brings in conveyancing enquiries in Cork..."></textarea>
                             </div>
                         </div>
@@ -441,19 +465,18 @@ twitter_description: "Law firm web design for Irish solicitors: fast, mobile fir
                             </label>
                         </div>
                         <div class="form-submit">
-                            <button type="submit" class="btn btn-primary" style="width:100%; padding:17px;">Send Me My Free Website Review</button>
+                            <button type="submit" class="btn btn-primary" style="width:100%; padding:17px;">Send Me My Free Website Teardown</button>
                         </div>
                     </form>
                 </div>
                 <div class="contact-info">
-                    <h3>What your website review covers</h3>
+                    <h3>What your teardown covers</h3>
                     <ul class="check-list">
-                        <li>The first impression and trust your site gives a new visitor</li>
-                        <li>How it performs on mobile and for page speed</li>
-                        <li>Whether it is set up to convert visitors into enquiries</li>
-                        <li>The SEO foundations search engines need to rank you</li>
-                        <li>Compliance and accessibility issues to address</li>
-                        <li>The quickest wins to start getting more enquiries</li>
+                        <li>Your site's first impression and whether it builds trust</li>
+                        <li>How it performs on a phone and how fast it loads</li>
+                        <li>Whether it guides visitors to actually contact you</li>
+                        <li>The SEO and compliance foundations underneath</li>
+                        <li>The highest impact fixes, on a short video you can keep</li>
                     </ul>
                     <div style="margin-top:30px; padding-top:28px; border-top:1px solid var(--ink-line);">
                         <h3 style="margin-bottom:12px;">Prefer to talk?</h3>

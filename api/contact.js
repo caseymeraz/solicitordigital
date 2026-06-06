@@ -62,12 +62,18 @@ module.exports = async (req, res) => {
   // Which page/offer this came from (per-service forms send a hidden "service")
   const SERVICE_LABELS = {
     "seo-audit": "Free SEO Audit",
+    "map-pack-report": "Free Map Pack Visibility Report",
+    "ads-opportunity": "Free Google Ads Opportunity Report",
+    "content-gap": "Free Content Gap Report",
+    "website-teardown": "Free Website Teardown",
+    "growth-plan": "Free Growth Plan (digital marketing)",
+    "pricing-quote": "Free Growth Plan / tailored quote (pricing page)",
+    "homepage": "Free Growth Plan (homepage)",
+    // legacy values, kept so older cached pages still label correctly
     "ppc-review": "Free Google Ads Review",
     "gbp-audit": "Free Google Business Profile Audit",
     "content-plan": "Free Content Plan",
     "website-review": "Free Website Review",
-    "growth-plan": "Free Growth Plan (digital marketing)",
-    "homepage": "Free Growth Plan (homepage)",
   };
   const serviceKey = String(body.service || "").trim();
   const serviceLabel = SERVICE_LABELS[serviceKey] || serviceKey || "Free Growth Plan";
