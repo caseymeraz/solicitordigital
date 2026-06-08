@@ -498,6 +498,17 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
   .price-firm { min-height: 0; }
 }
 
+/* Service showcase imagery */
+.svc-showcase { margin: 0 0 16px; }
+.svc-showcase img {
+  width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--hairline); box-shadow: var(--shadow-1);
+}
+.svc-showcase figcaption {
+  margin-top: 12px; text-align: center; font-size: 0.85rem;
+  color: var(--text-soft); line-height: 1.5;
+}
+
 /* Related-services link strip */
 .related-links a { color: var(--signal); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
 .related-links a:hover { color: #15ecae; }
