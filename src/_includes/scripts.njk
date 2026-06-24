@@ -86,6 +86,16 @@
                 if (!res.ok) throw new Error('Request failed');
                 btn.textContent = 'Thank you, we will be in touch shortly.';
                 btn.style.background = 'var(--signal-deep)';
+                // GA4 conversion: a lead was generated. Mark generate_lead as a
+                // Key Event in GA4 Admin so it counts as a conversion.
+                if (window.gtag) {
+                    gtag('event', 'generate_lead', {
+                        service: data.service || 'unknown',
+                        form_location: window.location.pathname,
+                        currency: 'EUR',
+                        value: 50
+                    });
+                }
             } catch (err) {
                 btn.textContent = 'Something went wrong, please try again';
                 btn.disabled = false;
@@ -93,6 +103,18 @@
             }
         }
         window.handleSubmit = handleSubmit;
+
+        // Phone + WhatsApp intent tracking (works before CallRail is live).
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a || !window.gtag) return;
+            var href = a.getAttribute('href') || '';
+            if (href.indexOf('tel:') === 0) {
+                gtag('event', 'phone_click', { link_url: href, location: window.location.pathname });
+            } else if (href.indexOf('wa.me') !== -1 || href.toLowerCase().indexOf('whatsapp') !== -1) {
+                gtag('event', 'whatsapp_click', { link_url: href, location: window.location.pathname });
+            }
+        }, true);
     </script>
 
     <script defer src="/assets/whatsapp-widget.js"></script>

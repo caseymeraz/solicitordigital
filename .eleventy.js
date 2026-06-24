@@ -1,7 +1,16 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/sitemap.xml": "sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
+  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+
+  // YYYY-MM-DD for sitemap <lastmod>.
+  eleventyConfig.addFilter("isoDate", function (d) {
+    try {
+      return new Date(d).toISOString().slice(0, 10);
+    } catch (e) {
+      return "";
+    }
+  });
 
   return {
     dir: {

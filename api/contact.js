@@ -135,6 +135,46 @@ module.exports = async (req, res) => {
       return res.status(502).json({ error: "Could not send your enquiry. Please try again." });
     }
 
+    // Auto-reply to the lead: instant confirmation in Casey's voice, sets
+    // expectations, opens a reply path. Never blocks the main flow.
+    try {
+      const firstName = name.split(/\s+/)[0] || "there";
+      const bookingLine = process.env.BOOKING_URL
+        ? `\n\nIf you would rather talk it through, grab a time here: ${process.env.BOOKING_URL}`
+        : "";
+      const replyText = `Hi ${firstName},
+
+Thanks for requesting your ${serviceLabel} from Solicitor Digital. This is Casey. I run the studio and I read every enquiry myself.
+
+I will take a look at ${body.firm ? String(body.firm).trim() : "your firm"} and send your report within one business day. If you want to talk sooner, just reply to this email or call (021) 206 3107.${bookingLine}
+
+A quick note on me. I have lived in Kinsale for six years, and before Solicitor Digital I built Juris Digital in the US, where we look after more than 250 law firms. Everything here is built for Irish solicitors and kept inside the LSRA advertising rules.
+
+Talk soon,
+Casey Meraz
+Solicitor Digital
+solicitordigital.ie`;
+      const replyHtml = `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.55;color:#0a1628;">${replyText
+        .split("\n")
+        .map((line) => (line.trim() === "" ? "<br>" : `<p style=\"margin:0 0 12px;\">${escapeHtml(line)}</p>`))
+        .join("")}</div>`;
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: process.env.CONTACT_FROM || DEFAULT_FROM,
+          to: [email],
+          reply_to: "casey@solicitordigital.ie",
+          subject: `Thanks ${firstName}, I have your ${serviceLabel} request`,
+          text: replyText,
+          html: replyHtml,
+        }),
+      });
+    } catch (replyErr) {
+      // Auto-reply is best effort. The enquiry already reached the inbox.
+      console.error("Auto-reply failed (non-fatal)", replyErr);
+    }
+
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error("Contact handler failed", err);
