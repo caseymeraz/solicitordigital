@@ -1,3 +1,6 @@
 .vercel
 node_modules
 _site
+
+# Internal ops runbooks (never publish)
+ops/
