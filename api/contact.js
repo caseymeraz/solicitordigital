@@ -79,6 +79,12 @@ module.exports = async (req, res) => {
   const serviceKey = String(body.service || "").trim();
   const serviceLabel = SERVICE_LABELS[serviceKey] || serviceKey || "Free Growth Plan";
 
+  // Page the form was submitted from (sent by the form script as a path).
+  const pagePath = String(body.page || "").trim();
+  const pageUrl = pagePath
+    ? (pagePath.startsWith("/") ? `https://solicitordigital.ie${pagePath}` : pagePath)
+    : "";
+
   const fields = [
     ["Enquiry / offer", serviceLabel],
     ["Name", name],
@@ -90,6 +96,8 @@ module.exports = async (req, res) => {
     ["Budget / case value", body.budget],
     ["Budget type", body["budget-type"]],
     ["Message", body.message],
+    ["Submitted from", pageUrl],
+    ["Referrer", body.referrer],
   ].filter(([, v]) => v != null && String(v).trim() !== "");
 
   const textBody = fields.map(([label, v]) => `${label}: ${v}`).join("\n");
@@ -123,7 +131,7 @@ module.exports = async (req, res) => {
         from: process.env.CONTACT_FROM || DEFAULT_FROM,
         to,
         reply_to: email,
-        subject: `${serviceLabel} enquiry${body.firm ? ` for ${body.firm}` : ""} (${name})`,
+        subject: `${serviceLabel} enquiry${body.firm ? ` for ${body.firm}` : ""} (${name})${pagePath ? ` via ${pagePath}` : ""}`,
         text: textBody,
         html: htmlBody,
       }),
@@ -146,7 +154,7 @@ module.exports = async (req, res) => {
 
 Thanks for requesting your ${serviceLabel} from Solicitor Digital. This is Casey. I run the studio and I read every enquiry myself.
 
-I will take a look at ${body.firm ? String(body.firm).trim() : "your firm"} and send your report within one business day. If you want to talk sooner, just reply to this email or call (021) 206 3107.${bookingLine}
+I will take a look at ${body.firm ? String(body.firm).trim() : "your firm"} and send your report within one business day. If you want to talk sooner, just reply to this email or call 087 353 5028.${bookingLine}
 
 A quick note on me. I have lived in Kinsale for six years, and before Solicitor Digital I built Juris Digital in the US, where we look after more than 250 law firms. Everything here is built for Irish solicitors and kept inside the LSRA advertising rules.
 

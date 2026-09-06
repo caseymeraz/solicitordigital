@@ -77,6 +77,9 @@
             btn.textContent = 'Sending...';
             btn.disabled = true;
             var data = Object.fromEntries(new FormData(form).entries());
+            // Where the enquiry came from, so the notification email always names the page.
+            data.page = window.location.pathname + window.location.search;
+            data.referrer = document.referrer || '';
             try {
                 var res = await fetch('/api/contact', {
                     method: 'POST',
