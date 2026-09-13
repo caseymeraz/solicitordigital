@@ -70,6 +70,9 @@ module.exports = async (req, res) => {
     "ai-visibility": "Free AI Visibility Report",
     "pricing-quote": "Free Growth Plan / tailored quote (pricing page)",
     "homepage": "Free Growth Plan (homepage)",
+    "law-firm-seo-audit": "Free SEO Audit (law firm SEO page)",
+    "law-firm-growth-plan": "Free Growth Plan (law firm marketing agency page)",
+    "law-firm-website-teardown": "Free Website Teardown (law firm website design page)",
     // legacy values, kept so older cached pages still label correctly
     "ppc-review": "Free Google Ads Review",
     "gbp-audit": "Free Google Business Profile Audit",

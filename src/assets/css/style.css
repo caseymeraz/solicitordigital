@@ -379,7 +379,7 @@ a.service-card:hover h3::after { opacity: 1; transform: translateX(0); }
 
 /* --------------------------------------------------------------------- Footer */
 .site-footer { background: #060e1a; color: var(--text-dim); padding: 64px 0 36px; border-top: 1px solid var(--ink-line-2); }
-.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--ink-line); }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--ink-line); }
 .footer-brand .logo { font-size: 1.3rem; margin-bottom: 14px; display: inline-block; }
 .footer-brand p { font-size: 0.9rem; color: var(--text-dim); max-width: 320px; }
 .footer-col h4 { color: #fff; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }

@@ -4,6 +4,27 @@
   "outputDirectory": "_site",
   "routes": [
     {
+      "src": "/services(/.*)?",
+      "status": 301,
+      "headers": {
+        "Location": "/digital-marketing-for-solicitors"
+      }
+    },
+    {
+      "src": "/contact/?",
+      "status": 301,
+      "headers": {
+        "Location": "/#contact"
+      }
+    },
+    {
+      "src": "/blog(/.*)?",
+      "status": 301,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
       "src": "/sem-for-attorneys/?",
       "status": 301,
       "headers": {
